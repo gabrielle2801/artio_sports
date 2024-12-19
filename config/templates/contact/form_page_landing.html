@@ -1,0 +1,71 @@
+
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+{% load static %}   
+
+
+{% block header %}
+      
+    {% endblock header %}
+{% block content %}
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h1>{{ page.title }}</h1>
+               
+                <div class="jumbotron" >
+                    <div>{{ page.thank_you_text|richtext }}</div> 
+                </div>
+                <a class="btn btn-primary" href="/">Retour vers Artio_sports</a>
+            </div>
+        </div>
+    </div>
+    <section class="contact-section bg-black">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Adresse</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">266 avenue Daumenil 75012 Paris</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50"><a href="mailto:artio.contacts@gmail.com">artio.contacts@gmail.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Téléphone</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">+33 6 12 50 08 48</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        </section>
+{% endblock %}
+{% block footer %}
+<footer class="footer_landing bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5">Copyright &copy; Artio-sports 2024</div>
+</footer>
+{% endblock %}

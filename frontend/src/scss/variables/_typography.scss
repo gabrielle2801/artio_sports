@@ -1,0 +1,33 @@
+// 
+// Typography
+// 
+
+// Override Bootstrap typography variables
+
+$font-family-base: "Helvetica Neue", 
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Nunito",
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+
+$base-letter-spacing: 0.0625em;
+
+// Custom font family for masthead H1
+
+$font-family-special: "Helvetica Neue",
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Varela Round",
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
