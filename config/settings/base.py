@@ -12,8 +12,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import environ
+
 from dotenv import load_dotenv
 load_dotenv()
+
+env = environ.Env()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -100,16 +104,14 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':  os.getenv("DB_NAME"),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': '3306',
-        }
+    "default": {
+        **env.db("DJANGO_DATABASE_URL", default="django.db.backends.mysql"),
+        "conn_max_age": 600,
+        "conn_health_checks": True,
+    }
 }
-if "mysql" in os.getenv("DJANGO_DATABASE_URL", ""):
+
+if "mysql" in os.environ.get("DJANGO_DATABASE_URL", ""):
     try:
         import pymysql
 
