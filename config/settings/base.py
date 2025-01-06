@@ -12,16 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import environ
 
-from dotenv import load_dotenv
-load_dotenv()
-
-env = environ.Env()
+from config import env
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -106,8 +101,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         **env.db("DJANGO_DATABASE_URL", default="django.db.backends.mysql"),
-        "conn_max_age": 600,
-        "conn_health_checks": True,
     }
 }
 
@@ -206,8 +199,8 @@ WAGTAILSEARCH_BACKENDS = {
 # Email configuration 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'artio-sports.com'
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
@@ -224,8 +217,8 @@ WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'tx
 AUTH_USER_MODEL = 'account.CustomUser'
 DJANGO_VITE_DEV_MODE = True
 # Recaptcha set
-RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_SITE_KEY")
-RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
+RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_SITE_KEY")
+RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_SECRET_KEY")
 NOCAPTCHA = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
