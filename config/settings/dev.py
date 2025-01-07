@@ -1,5 +1,5 @@
 from .base import *
-from .base import env
+from config import env
 import os
 
 
