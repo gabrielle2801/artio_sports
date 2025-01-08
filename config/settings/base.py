@@ -101,8 +101,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         **env.db("DJANGO_DATABASE_URL", default="django.db.backends.mysql"),
+        "conn_max_age": 600,
+        "conn_health_checks": True,
     }
 }
+
 
 if "mysql" in os.environ.get("DJANGO_DATABASE_URL", ""):
     try:
