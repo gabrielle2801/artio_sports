@@ -100,7 +100,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        **env.db("DJANGO_DATABASE_URL", default="django.db.backends.mysql"),
+        **env.db("DJANGO_DATABASE_URL", default="sqlite:///db.sqlite3"),
         "conn_max_age": 600,
         "conn_health_checks": True,
     }
