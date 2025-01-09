@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
 * Start Bootstrap - Grayscale v7.0.6 (https://startbootstrap.com/theme/grayscale)
-* Copyright 2013-2024 Start Bootstrap
+* Copyright 2013-2025 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
 */
 /*!
@@ -11096,6 +11096,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0;
+  margin-bottom: 10px;
+}
+
+.background-video {
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .masthead {
@@ -11132,7 +11139,7 @@ body {
 }
 @media (min-width: 992px) {
   .masthead {
-    height: 100vh;
+    height: auto;
     padding: 0;
   }
   .masthead h1, .masthead .h1 {
@@ -11148,6 +11155,7 @@ body {
 
 .about-section {
   background: white;
+  padding: 2px;
 }
 .about-section p {
   text-align: justify;
@@ -11162,7 +11170,7 @@ body {
 }
 
 .projects-section {
-  padding: 10rem 0;
+  padding: 2rem;
 }
 .projects-section .featured-text {
   padding: 2rem;

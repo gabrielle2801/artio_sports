@@ -41,7 +41,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-        height: 100vh;
+        height: auto;
         padding: 0;
 
         h1 {
