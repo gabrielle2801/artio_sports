@@ -18,9 +18,8 @@
                     <div class="form-row">
                         <form class="pt-16" action="{% pageurl page %}" method="POST">
                             {% csrf_token %}
-                            {% crispy form %}
+                            {{ form|crispy }}
                             <button class="btn btn-primary" type="Submit">Envoyé</button>
-                           
                         </form>
                     </div>
                 </div>
