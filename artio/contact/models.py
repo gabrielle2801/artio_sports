@@ -22,6 +22,7 @@ class FormField(AbstractFormField):
 
 
 class FormPage(WagtailCaptchaEmailForm):
+
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
