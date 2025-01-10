@@ -1,3 +1,8 @@
+/*!
+* Start Bootstrap - Grayscale v7.0.6 (https://startbootstrap.com/theme/grayscale)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
+*/
 //
 // Scripts
 // 
@@ -47,3 +52,18 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+var video = document.getElementById("background-video");
+var i = document.getElementById("icon");
+
+
+function mutedAndUnmuted () {
+  if (video.muted) {
+    video.muted=false;
+    i.classList.add('bi-volume-up')
+    
+  } else {
+    video.muted=true;
+    i.classList.remove('bi-volume-up')
+    i.classList.add('bi-volume-mute')
+  }
+}
