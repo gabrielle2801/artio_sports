@@ -30,7 +30,7 @@ urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
-    path("mentions_légales/", MentionView.as_view(), name='mention_legales'),
+    path("mentions_legales/", MentionView.as_view(), name='mention_legales'),
     path("politique_de_confidentialite/", PolicyView.as_view(), 
          name='policy_page'),
     path("", include(wagtail_urls)),
