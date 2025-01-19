@@ -7,7 +7,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="/">
-            <img class="logo" src="{% static '../media/original_images/250115_LOGO_ombré_tricolore.png'%}" width="70" height="85">
+            <img class="logo" src="{% static 'src/assets/img/250115_LOGO_ombré_tricolore.png' %}" width="70" height="85">
         </a>
         
     </div>
@@ -27,6 +27,9 @@
                 <h2 class="text-left text-black-50 ">Mentions Légales</h2>
                 <p class=" text-left  mx-auto mt-2 mb-5">Mentions légales en vigueur au 01/01/2025</p>
             </div>
+        </div>
+        <div class="text-left text-black-50">
+            {{ page.body|richtext }}
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col justify-content-center">
