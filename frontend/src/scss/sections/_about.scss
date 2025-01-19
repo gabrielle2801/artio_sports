@@ -6,14 +6,34 @@
     background:white;
     padding: 2px;
     
-    
+    ul {
+        padding:0;
+        list-style:none;
+        line-height:1.6;
+        font-size:14px;
+        margin-bottom:0;
+      }
+
+      li {
+        font-family: "Helvetica Neue";
+        color:inherit;
+        text-decoration:none;
+        font-weight: 300;
+        font-size: larger;
+      }
 
     p {
-        
+        font-family: "Helvetica Neue";
         text-align: justify;
         font-weight: 300;
+        font-size: larger;
     }
-    h2 {
+    h2  {
+        font-family: "Helvetica Neue";
+        font-weight:200;
+        
+    }
+    h4  {
         font-family: "Helvetica Neue";
         font-weight:200;
         

@@ -57,6 +57,7 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+// icon muted unmuted
 var video = document.getElementById("background-video");
 var i = document.getElementById("icon");
 
@@ -72,3 +73,20 @@ function mutedAndUnmuted () {
     i.classList.add('bi-volume-mute')
   }
 }
+// Contact
+(function () {
+    'use strict'
+    const forms = document.querySelectorAll('.requires-validation')
+    Array.from(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+    
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    
