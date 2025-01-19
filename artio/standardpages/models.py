@@ -15,34 +15,3 @@ class MentionIndexPage(Page):
     ]
 
 
-class MentionPage(Page):
-  
-    intro = models.CharField(max_length=250, blank=True)
-    body = RichTextField(blank=True)
-
-    search_fields = Page.search_fields + [
-        index.SearchField('intro'),
-        index.SearchField('body'),
-    ]
-
-    content_panels = Page.content_panels + [
-        FieldPanel('intro'),
-        FieldPanel('title', classname="full"),
-        FieldPanel('body', classname="full"),
-    ]
-
-
-class PolicyPage(Page):
-    intro = models.CharField(max_length=250, blank=True)
-    body = RichTextField(blank=True)
-
-    search_fields = Page.search_fields + [
-        index.SearchField('intro'),
-        index.SearchField('body'),
-    ]
-
-    content_panels = Page.content_panels + [
-        FieldPanel('intro'),
-        FieldPanel('title', classname="full"),
-        FieldPanel('body', classname="full"),
-    ]

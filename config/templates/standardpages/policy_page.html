@@ -1,5 +1,5 @@
-{% extends 'home/home_page.html' %}
-{% load wagtailcore_tags %}
+{% extends 'contact/form_page.html' %}
+
 {% load static %}   
 
 {% block nav %}
@@ -27,9 +27,7 @@
                 <h2 class="text-left text-black-50 ">Politique de confidentialité et de traitement des données personnelles de Artio</h2>
             </div>
         </div>
-        <div class="text-left text-black-50">
-            {{ page.body|richtext }}
-        </div>
+        
         <div class="row d-flex justify-content-center">
             <div class="col justify-content-center">
                 <p class=" text-left ">Nous pouvons collecter des données à caractère personnel vous concernant par l’intermédiaire de notre site Internet, de nos magasins ou de notre service commercial.
