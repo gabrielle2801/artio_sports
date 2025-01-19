@@ -1,5 +1,5 @@
-{% extends 'home/home_page.html' %}
-{% load wagtailcore_tags %}
+{% extends 'contact/form_page.html' %}
+
 {% load static %}   
 
 {% block nav %}
@@ -28,9 +28,7 @@
                 <p class=" text-left  mx-auto mt-2 mb-5">Mentions légales en vigueur au 01/01/2025</p>
             </div>
         </div>
-        <div class="text-left text-black-50">
-            {{ page.body|richtext }}
-        </div>
+        
         <div class="row d-flex justify-content-center">
             <div class="col justify-content-center">
                 <h4 class="text-left text-black-50">Conditions d'utilisation</h4>
