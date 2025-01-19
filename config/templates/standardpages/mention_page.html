@@ -1,0 +1,86 @@
+{% extends 'home/home_page.html' %}
+{% load wagtailcore_tags %}
+{% load static %}   
+
+{% block nav %}
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">
+            <img class="logo" src="{% static '../media/original_images/250115_LOGO_ombré_tricolore.png'%}" width="70" height="85">
+        </a>
+        
+    </div>
+</nav> 
+{% endblock nav %}
+{% block header %}
+<header class="masthead_mention">
+       
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row  align-items-center">
+            <div class="col">
+                <h2 class="text-left text-black-50 ">Mentions Légales</h2>
+                <p class=" text-left  mx-auto mt-2 mb-5">Mentions légales en vigueur au 01/01/2025</p>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col justify-content-center">
+                <h4 class="text-left text-black-50">Conditions d'utilisation</h4>
+                <p class=" text-left mx-auto mt-2 mb-5">L’utilisation du présent site implique l’acceptation pleine et entière des conditions générales d’utilisation décrites ci-après. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="text-left text-black-50">Informations</h4>
+                <p class=" text-left mx-auto mt-2 mb-5">Les informations et documents du site sont présentés à titre indicatif, n’ont pas de caractère exhaustif, et ne peuvent engager la responsabilité du propriétaire du site. Le propriétaire du site ne peut être tenu responsable des dommages directs et indirects consécutifs à l’accès au site.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="text-left text-black-50">Propriété intellectuelle</h4>
+                <p class=" text-left">Sauf mention contraire, tous les éléments accessibles sur le site (textes, images, graphismes, logo, icônes, sons, logiciels, etc.) restent la propriété exclusive de leurs auteurs, en ce qui concerne les droits de propriété intellectuelle ou les droits d’usage.</p>
+                <ul class="text-left mx-auto mt-2 mb-5 ">
+                    <li> 1- Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de l’auteur.</li>
+                    <li> 2- 3- Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient est considérée comme constitutive d’une contrefaçon et poursuivie.</li>
+                    <li> 4- Les marques et logos reproduits sur le site sont déposés par les sociétés qui en sont propriétaires.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="text-left text-black-50">Hébergeur</h4>
+                <p class=" text-left mx-auto mt-2 mb-5">O2switch
+                    Siret : 510 909 807 00032
+                    RCS Clermont Ferrand
+                    SAS au capital de 100 000€
+                    Opérateur Télécom déclaré ARCEP
+                    09/2989 – AS50474
+                    Marque déposée INPI : 09 3 645 279
+                    L’ensemble des éléments visuels et textuels de ce site fait l’objet d’un dépôt INPI-Soleau.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="text-left text-black-50">Conception et développement du site</h4>
+                <p class=" text-left mx-auto mt-2 mb-5">Créée par Gabrielle Azadian.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="text-left text-black-50">Crédits</h4>
+                <p class=" text-left mx-auto mt-2 mb-5">Illustrations, logo et vidéo réalisés par Gabrielle Azadian et Reine Azadian.
+                    Les photos et images proviennent du site de partage de photos Freepik et Envato.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}

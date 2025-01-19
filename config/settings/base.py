@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "wagtail.contrib.settings",
     "django_browser_reload",
     "wagtail_modeladmin",
     'django_vite',
@@ -61,6 +62,8 @@ INSTALLED_APPS = [
     "artio.search",
     "artio.account",
     "artio.contact",
+    "artio.standardpages",
+    "artio.base",
 ]
 
 MIDDLEWARE = [
@@ -90,6 +93,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Add this to register the _settings_ context processor:
+                "wagtail.contrib.settings.context_processors.settings",
             ],
         },
     },

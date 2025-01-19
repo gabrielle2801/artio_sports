@@ -8,7 +8,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="/">
-            <img class="logo" src="{% static '../media/original_images/241120_LOGO_ombré.png'%}" width="70" height="85">
+            <img class="logo" src="{% static '../media/original_images/250115_LOGO_ombré_tricolore.png'%}" width="70" height="85">
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
@@ -52,7 +52,7 @@
 <div class="container px-4 px-lg-5">
     <!-- Featured Project Row-->
     <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_rugby2.png' %}" alt="..." /></div>
+        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_rugby.png' %}" alt="..." /></div>
         <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
                 <h4>RUGBY</h4>
@@ -66,7 +66,7 @@
     </div>
      <!-- Project One Row-->
      <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_football2.png' %}" alt="..." /></div>
+        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/250119_football.png' %}" alt="..." /></div>
         <div class="col-xl-4 col-lg-5 order-lg-first ">
             <div class="featured-text-right text-center text-lg-left">
                 <h4>FOOTBALLL</h4>
@@ -124,7 +124,7 @@
     </div>
     <!-- Project One Row-->
     <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_tennis2.png' %}" alt="..." /></div>
+        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/250115_tennis.png' %}" alt="..." /></div>
         <div class="col-xl-4 col-lg-5 order-lg-first ">
             <div class="featured-text-right text-center text-lg-left">
                 <h4>TENNIS-PADEL</h4>
@@ -172,7 +172,7 @@
                 
                 <div class="row input-group-newsletter">
                         {% if page.contact_cta_link %}
-                        <a  href="{% pageurl page.contact_cta_link %}" class="btn btn-primary" > <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <a  href="{% pageurl page.contact_cta_link %}" class="btn btn-primary" >
                             {% firstof page.contact_cta page.contact_cta_link.title %}
                         </a>
                     {% endif %}
@@ -203,44 +203,7 @@
     </div>
 </div>
 </section>
-<!-- Contact-->
-<section class="contact-section bg-black">
-<div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5">
-        <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Adresse</h4>
-                    <hr class="my-4 mx-auto" />
-                    <div class="small text-black-50">266 avenue Daumenil 75012 Paris</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-envelope text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Email</h4>
-                    <hr class="my-4 mx-auto" />
-                    <div class="small text-black-50"><a href="mailto:contact@artio-sports.com">contact@artio-sports.com</a></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Téléphone</h4>
-                    <hr class="my-4 mx-auto" />
-                    <div class="small text-black-50">+33 6 12 50 08 48</div>
-                </div>
-            </div>
-        </div>
-    </div>
-   
-</div>
-</section>
+
 <!-- Jquery js-->
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

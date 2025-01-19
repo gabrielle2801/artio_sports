@@ -36,12 +36,49 @@ class HomePage(Page):
         help_text="contact Page"
     )
 
+    mention_cta = models.CharField(
+        blank=True, 
+        verbose_name="Mention CTA",
+        max_length=255,
+        help_text="Mention CTA",
+    )
+    mention_cta_link = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        verbose_name="mention CTA link",
+        help_text="mention Page"
+    )
+    policy_cta = models.CharField(
+        blank=True, 
+        verbose_name="Mention CTA",
+        max_length=255,
+        help_text="Mention CTA",
+    )
+    policy_cta_link = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        verbose_name="policy CTA link",
+        help_text="policy Page"
+    )
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
                 FieldPanel("contact_cta"),
                 FieldPanel("contact_cta_link"),
+                FieldPanel("mention_cta"),
+                FieldPanel("mention_cta_link"),
+                FieldPanel("policy_cta"),
+                FieldPanel("policy_cta_link"),
             ],
         ),
         FieldPanel('body'),
     ]
+
+

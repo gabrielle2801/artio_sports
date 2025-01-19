@@ -1,32 +1,59 @@
 
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
-{% load crispy_forms_tags %}
-{% load crispy_forms_field %}
 {% load static %}   
 
-{% block header %}{% endblock %}
-{% block nav %}{% endblock %}
+{% block nav %}
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">
+            <img class="logo" src="{% static '../media/original_images/250115_LOGO_ombré_tricolore.png'%}" width="70" height="85">
+        </a>
+        
+    </div>
+</nav> 
+{% endblock nav %}
+{% block header %}
+<header class="masthead_mention">
+       
+</header>
+{% endblock %}
 
 {% block content %}
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <h1>{{ page.title }}</h1>
-                <p class="blue-text">{{ self.intro|richtext }}</p>
-                <div class="jumbotron" >
-                    <div class="form-row">
-                        <form class="pt-16" action="{% pageurl page %}" method="POST">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            <button class="btn btn-primary" type="Submit">Envoyé</button>
-                        </form>
+                
+                <div class="form-body">
+                    <div class="row">
+                        <div class="form-holder">
+                            <div class="form-content">
+                                <div class="form-items">
+                                    <h3>Formulaire de Contact</h3>
+                                    <p>Fill in the data below.</p>
+                                    <form action="{% pageurl page %}" method="POST">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <div class="form-button mt-3">
+                                            <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            
             </div>
         </div>
-    </div>
-  
-        
-
+    </div>  
 {% endblock %}
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
+
+
+
+
+                            

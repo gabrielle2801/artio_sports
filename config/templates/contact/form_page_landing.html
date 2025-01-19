@@ -6,9 +6,23 @@
 {% load static %}   
 
 
+{% block nav %}
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">
+            <img class="logo" src="{% static '../media/original_images/250115_LOGO_ombré_tricolore.png'%}" width="70" height="85">
+        </a>
+        
+    </div>
+</nav> 
+{% endblock nav %}
 {% block header %}
-      
-    {% endblock header %}
+<header class="masthead_mention">
+       
+</header>
+{% endblock %}
+    
 {% block content %}
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
@@ -22,45 +36,8 @@
             </div>
         </div>
     </div>
-    <section class="contact-section bg-black">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Adresse</h4>
-                            <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50">266 avenue Daumenil 75012 Paris</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Email</h4>
-                            <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50"><a href="mailto:contact@artio-sports.com">contact@artio-sports.com</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Téléphone</h4>
-                            <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50">+33 6 12 50 08 48</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
+    
 {% endblock %}
 {% block footer %}
-<footer class="footer_landing bg-black small text-center text-white-50">
-    <div class="container px-4 px-lg-5">Copyright &copy; Artio-sports 2025</div>
-</footer>
+{% include "includes/footer.html" %}
 {% endblock %}
