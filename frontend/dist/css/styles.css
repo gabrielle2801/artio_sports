@@ -20975,6 +20975,61 @@ html, body {
   color: #2acc80;
 }
 
+@media (min-width: 576px) {
+  .container {
+    min-width: 540px;
+  }
+  .form-holder .form-content {
+    width: 90%;
+    margin: auto;
+  }
+  .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    min-width: 720px;
+  }
+  .form-content .form-items {
+    width: 90%;
+    margin: auto;
+    min-width: 0;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 568px) {
+  .form-content .form-items {
+    width: 90%;
+    margin: auto;
+    min-width: 0;
+  }
+}
+@media all and (min-width: 321px) and (max-width: 480px) {
+  .form-content .form-items {
+    width: 90%;
+    margin: auto;
+    min-width: 0;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 320px) {
+  .container {
+    min-width: 240px;
+  }
+  .form-content .form-items {
+    border: 3px solid #fff;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
+    transition: all 0.4s ease;
+  }
+  .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 .footer-dark {
   padding: 50px 0;
   color: #f0f9ff;

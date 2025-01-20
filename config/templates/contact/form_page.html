@@ -15,27 +15,26 @@
 </nav> 
 {% endblock nav %}
 {% block header %}
-<header class="masthead_mention">
+<header class="masthead_mention img-fluid">
        
 </header>
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid px-1 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                
-                <div class="form-body">
-                    <div class="row">
-                        <div class="form-holder">
-                            <div class="form-content">
-                                <div class="form-items">
+    <div class="container mx-auto px-4">
+        <div class="row d-flex mx-auto px-4 justify-content-center">
+            <div class="container mx-auto px-4">
+                <div class="row mx-auto px-4">
+                    <div class="form-body px-1 py-1 mx-auto ">
+                        <div class="form-holder mx-auto px-4">
+                            <div class="form-content mx-auto px-4">
+                                <div class="form-items mx-auto px-4">
                                     <h3>Formulaire de Contact</h3>
                                     <p>Fill in the data below.</p>
-                                    <form action="{% pageurl page %}" method="POST">
+                                    <form class="form-group mx-auto px-4" action="{% pageurl page %}" method="POST">
                                         {% csrf_token %}
                                         {{ form.as_p }}
-                                        <div class="form-button mt-3">
+                                        <div class="form-button mx-auto px-4">
                                             <button id="submit" type="submit" class="btn btn-primary">Register</button>
                                         </div>
                                     </form>
