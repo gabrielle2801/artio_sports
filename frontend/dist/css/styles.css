@@ -21004,12 +21004,20 @@ html, body {
     margin: auto;
     min-width: 0;
   }
+  .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 @media all and (min-width: 321px) and (max-width: 480px) {
   .form-content .form-items {
     width: 90%;
     margin: auto;
     min-width: 0;
+  }
+  .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 @media all and (min-width: 0px) and (max-width: 320px) {
