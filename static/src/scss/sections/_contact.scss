@@ -1,0 +1,56 @@
+// 
+// Contact
+// 
+
+.contact-section {
+    padding-top: 5rem;
+    
+
+    .card {
+        border: 0;
+        border-bottom: 0.25rem solid $primary;
+
+        h4 {
+            font-size: 0.8rem;
+            font-family: $font-family-special;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+        }
+
+        hr {
+            opacity: 1;
+            border-color: $primary;
+            border-width: 0.25rem;
+            width: 3rem;
+        }
+    }
+
+    .social {
+        margin-top: 5rem;
+
+        a {
+            text-align: center;
+            height: 3rem;
+            width: 3rem;
+            background: fade-out($white, 0.9);
+            border-radius: 100%;
+            line-height: 3rem;
+            color: fade-out($white, 0.7);
+
+            &:hover {
+                color: fade-out($white, 0.5);
+            }
+
+            &:active {
+                color: $white;
+            }
+        }
+    }
+    
+}
+body{color: #000;overflow-x: hidden;height: 100%;background-image: url("../assets/img/beautiful-mountains-world.original.jpg");;background-repeat: no-repeat;background-size: 100% 100%}.card{padding: 30px 40px;margin-top: 60px;margin-bottom: 60px;border: none !important;box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2)}.blue-text{color: #00BCD4}.form-control-label{margin-bottom: 0}input, textarea, button{padding: 8px 15px;border-radius: 5px !important;margin: 5px 0px;box-sizing: border-box;border: 1px solid #ccc;font-size: 18px !important;font-weight: 300}input:focus, textarea:focus{-moz-box-shadow: none !important;-webkit-box-shadow: none !important;box-shadow: none !important;border: 1px solid #00BCD4;outline-width: 0;font-weight: 400}.btn-block{text-transform: uppercase;font-size: 15px !important;font-weight: 400;height: 43px;cursor: pointer}.btn-block:hover{color: #fff !important}button:focus{-moz-box-shadow: none !important;-webkit-box-shadow: none !important;box-shadow: none !important;outline-width: 0}
+
+input, label {
+    display:block;
+    float:left;
+}
