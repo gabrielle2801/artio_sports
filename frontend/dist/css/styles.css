@@ -20590,6 +20590,20 @@ body {
   -webkit-background-clip: text;
           background-clip: text;
 }
+.masthead #text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-family: "Helvetica Neue";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  text-align: center;
+}
 .masthead h2, .masthead .h2 {
   font-family: "Helvetica Neue";
   max-width: 20rem;
@@ -20657,6 +20671,69 @@ body {
   }
 }
 
+.masthead_joutes {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/joutes.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.masthead_joutes h1, .masthead_joutes .h1 {
+  font-family: "Helvetica Neue";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.masthead_joutes #text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-family: "Helvetica Neue";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  text-align: center;
+}
+.masthead_joutes h2, .masthead_joutes .h2 {
+  font-family: "Helvetica Neue";
+  max-width: 20rem;
+  font-size: 200;
+}
+@media (min-width: 768px) {
+  .masthead_joutes h1, .masthead_joutes .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .masthead_joutes {
+    height: auto;
+    padding: 0;
+  }
+  .masthead_joutes h1, .masthead_joutes .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .masthead_joutes h2, .masthead_joutes .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+
 .about-section {
   background: white;
   padding: 2px;
@@ -20696,12 +20773,18 @@ body {
 .projects-section {
   padding: 2rem;
 }
+.projects-section p {
+  font-family: "Helvetica Neue";
+  text-align: justify;
+  font-weight: 300;
+  font-size: larger;
+}
 .projects-section .featured-text {
   padding: 2rem;
 }
 @media (min-width: 992px) {
   .projects-section .featured-text {
-    padding: 0 0 0 2rem;
+    padding: 0 2 0 2rem;
     border-left: 0.5rem solid #305F65;
   }
 }
@@ -20710,7 +20793,7 @@ body {
 }
 @media (min-width: 992px) {
   .projects-section .featured-text-right {
-    padding: 0 0 0 2rem;
+    padding: 0 2 0 2rem;
     border-right: 0.5rem solid #305F65;
   }
 }
@@ -20854,7 +20937,6 @@ input, label {
 
 html, body {
   height: 100%;
-  background-color: #152733;
 }
 
 .form-holder {
@@ -20866,6 +20948,7 @@ html, body {
 }
 
 .form-holder .form-content {
+  background-color: #152733;
   position: relative;
   text-align: center;
   display: flex;

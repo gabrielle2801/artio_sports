@@ -72,19 +72,21 @@ input, label {
 
 html, body {
     height: 100%;
-    background-color: #152733;
+    
 }
 
 
 .form-holder {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .form-holder .form-content {
+    background-color: #152733;
     position: relative;
     text-align: center;
     display: -webkit-box;

@@ -6,7 +6,6 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from artio.search import views as search_views
-# from artio.standardpages.views import MentionView, PolicyView
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -31,6 +30,7 @@ urlpatterns = urlpatterns + [
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
     path("", include('artio.standardpages.urls')),
+    path("", include('artio.products.urls')),
     path("", include(wagtail_urls)),
     
     # Alternatively, if you want Wagtail pages to be served from a subpath

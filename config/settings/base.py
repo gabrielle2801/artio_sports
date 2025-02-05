@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     "artio.contact",
     "artio.standardpages",
     "artio.base",
+    "artio.products",
 ]
 
 MIDDLEWARE = [
@@ -237,3 +238,4 @@ NOCAPTCHA = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+X_FRAME_OPTIONS = 'SAMEORIGIN'
