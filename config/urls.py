@@ -4,14 +4,16 @@ from django.contrib import admin
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
-
+from django.apps import apps
 from artio.search import views as search_views
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+    path('boutique/', include(apps.get_app_config('oscar').urls[0])),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 

@@ -1,0 +1,37 @@
+{% load navigation_tags %}
+
+{% block footer %}
+         <!-- Footer-->
+         <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Artio</h3>
+                            
+                            <ul>
+                                <li>266 avenue Daumenil 75012 Paris</li>
+                                <li><a href="mailto:contact@artio-sports.com">contact@artio-sports.com</a></li>
+                                <li>+33 6 12 50 08 48</li>
+                                <li>+33 6 71 90 90 15</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>A Propos</h3>
+                            <ul> 
+                                <li><a href="{% url 'mention_legales' %}">mentions légales</a></li>
+                                <li><a href="{% url 'policy_page' %}">Politique de confidentialité</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Artio fournisseur officiel de la Saint Louis organisé à Sète</h3>
+                            <p>Du 21 au 26 août, Sète va célébrer la nouvelle édition 2025 de la Saint Louis. Artio sera présent en tant que fournisseur officiel de ces évènements incroyables que sont les joutes nautiques </p>
+                        </div>
+                        
+                        <div class="col item social"><a href="#"><i class="fa-brands fa-linkedin"></i></a><a href="#"><i class="fa-brands fa-pinterest"></i></a><a href="https://www.instagram.com/artio.sports/"><i class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright">Tous droits réservés Artio 2025</p>
+                </div>
+            </footer>
+        </div>
+        {% endblock %}

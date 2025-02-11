@@ -4,10 +4,8 @@ from modelcluster.fields import ParentalKey
 
 from wagtail.models import Page, Orderable
 from wagtail.admin.panels import FieldPanel, InlinePanel
-# from wagtail.contrib.settings.models import register_setting
 from django.core.paginator import Paginator
 from django.template.response import TemplateResponse
-# from django.core.paginator import Paginator
 
 
 class Product(Page):

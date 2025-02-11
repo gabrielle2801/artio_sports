@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}
+{% load wagtailcore_tags crispy_forms_tags %}
+{% load static %}   
+
+{% block nav %}
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">
+            <img class="logo" src="{% static 'src/assets/img/250115_LOGO_ombré_tricolore.png' %}" width="70" height="85">
+        </a>
+        
+    </div>
+</nav> 
+{% endblock nav %}
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<header class="masthead_mention img-fluid">
+       
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <div class="form-content">
+                        <div class="form-items">
+                            <h3>Formulaire de Contact</h3>
+                            <p>Fill in the data below.</p>
+                            <form action="{% pageurl page %}" method="POST">
+                            <div class="form-group"> 
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <div class="form-button mt-3">
+                                    <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block footer %}
+{% include "includes/footer.html" %}
+{% endblock %}
+
+
+
+
+                            

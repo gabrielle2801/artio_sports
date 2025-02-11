@@ -1,0 +1,55 @@
+{% load display_tags %}
+{% load i18n %}
+{% load image_tags %}
+{% load reviews_tags %}
+
+{% block product %}
+
+    <article class="card">
+        {% block product_image %}
+                {% with image=product.primary_image %}
+                    {% oscar_thumbnail image.original "x1000" upscale=False as thumb %}
+                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="card__background"  width="500"
+                        height="500">
+                {% endwith %}
+        {% endblock %}
+        <div class="card__content | flow">
+            <div class="card__content--container | flow">
+                
+
+        {% block product_title %}
+            <h2 class="card__title">
+                <a class="card__title" href="{{ product.get_absolute_url }}" title="{{ product.get_title }}">
+                    {{ product.get_title|truncatewords:4 }}
+                </a>
+            </h2>
+        {% endblock %}
+        {% block product_review %}
+                {% iffeature "reviews" %}
+                <p class="star-rating {{ product.rating|as_stars }}">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                {% endiffeature %}
+            {% endblock %}
+
+        {% block product_price %}
+            <div class="card__description">
+                {% include "oscar/catalogue/partials/stock_record.html" %}
+                {% if not product.is_parent and not product.has_options %}
+                    {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+                {% endif %}
+                {% endblock %}
+            </div>
+    
+            </div>
+            
+        </div>
+            </article>
+{% endblock %}
+
+
+    
