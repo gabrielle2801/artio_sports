@@ -1,9 +1,13 @@
 {% extends "oscar/layout.html" %}
+{% load display_tags %}
 {% load static %}
 {% load basket_tags %}
 {% load category_tags %}
 {% load product_tags %}
+{% load image_tags %}
 {% load i18n %}
+
+
 
 {% block title %}
     {% if summary %}{{ summary }} |{% endif %} {{ block.super }}
@@ -20,23 +24,8 @@
     </nav>
 {% endblock breadcrumbs %}
 
-{% block column_left %}
-    {% category_tree as tree_categories %}
-    
-    {% if has_facets %}
-        <h4>{% trans "Refine by" %}</h4>
-        <div class="side_categories card card-body bg-light">
-            {% for field, data in facet_data.items %}
-                {% if data.results %}
-                    {% include 'oscar/search/partials/facet.html' with name=data.name items=data.results %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endblock %}
 
 {% block content %}
-
     <form method="get">
         {# Render other search params as hidden inputs #}
         {% for value in selected_facets %}
@@ -69,6 +58,28 @@
             </p>
         {% endif %}
     </form>
+    {% block category %}
+    {% category_tree as tree_categories %}
+       {% if tree_categories %}
+       <section>
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                    {% for tree_category in tree_categories %}
+                    <div class="col">
+                            <a href="{{ tree_category.url }}" class="link">
+                                {% if tree_category.pk == category.pk %}
+                                    <strong>{{ tree_category.name }}</strong>
+                                {% else %}
+                                    {{ tree_category.name }}
+                                {% endif %}
+                            </a>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+            </div>
+        </div>
+       </section>
+    {% endblock %}
     {% if products %}
         <section>
             <div class="container d-flex justify-content-center"> 
@@ -85,9 +96,7 @@
     {% else %}
         <p class="nonefound">{% trans "No products found." %}</p>
     {% endif %}
-
-{% endblock content %}
-
+    {% endblock %}
 {% block onbodyload %}
     {{ block.super }}
     oscar.search.init();

@@ -20571,11 +20571,11 @@ body {
 }
 :root {
   /* Colors */
-  --brand-color: hsl(46, 100%, 50%);
+  --brand-color: #282d32;
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
   /* Fonts */
-  --font-title: "Montserrat", sans-serif;
+  --font-title: "Helvetica", sans-serif;
   --font-text: "Lato", sans-serif;
 }
 
@@ -20601,18 +20601,16 @@ p {
   margin: 0;
 }
 
+.link {
+  color: #282d32;
+  text-decoration: none !important;
+}
+
 h2, .h2 {
   font-size: 2.25rem;
   font-family: var(--font-title);
   color: var(--white);
   line-height: 1.1;
-}
-
-p {
-  font-family: var(--font-text);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--white);
 }
 
 .flow > * + * {
@@ -20631,7 +20629,6 @@ p {
   width: 80vw;
   max-width: 21.875rem;
   overflow: hidden;
-  border-radius: 0.625rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
 }
 
@@ -20684,12 +20681,11 @@ p {
   width: -moz-fit-content; /* Prefijo necesario para Firefox  */
   font-variant: small-caps;
   font-weight: bold;
-  border-radius: 0.45em;
   border: none;
-  background-color: var(--brand-color);
+  background-color: #282d32;
   font-family: var(--font-title);
   font-size: 1.125rem;
-  color: var(--black);
+  color: var(--white);
 }
 
 .card__button:focus {
@@ -20752,6 +20748,116 @@ p {
     transition-delay: 500ms;
   }
 }
+.login_form {
+  padding: 40px;
+  border: 1px solid #e3e3e3;
+  margin: 20px;
+}
+
+.register_form {
+  padding: 40px;
+  border: 1px solid #e3e3e3;
+  margin: 20px;
+}
+
+.login_form .title {
+  color: #252525;
+  font-family: Helvetica, sans-serif;
+  margin: 29px;
+  padding: 5px;
+  text-align: center;
+}
+
+.form-control {
+  border: 1px solid #e3e3e3 !important;
+  height: 50px;
+  padding: 0 12px;
+  color: #252525;
+  transition: 0.3s;
+  background-color: #fff !important;
+  max-width: 100%;
+}
+
+.col-form-label {
+  position: absolute;
+  left: 13px;
+  top: 7px;
+  opacity: 0;
+  width: auto;
+  line-height: 1;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.submit {
+  padding: 0 30px;
+  margin: 5px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #282d32;
+  background-color: #282d32;
+  color: #fff;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  vertical-align: top;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+.input[type=text] {
+  border: 1px solid #e3e3e3;
+  height: 50px;
+  padding: 0 12px;
+  color: #252525;
+  transition: 0.3s;
+  background-color: #fff;
+  max-width: 100%;
+}
+
+input[type=submit] {
+  border: none; /*rewriting standard style, it is necessary to be able to change the size*/
+  height: 100px;
+  width: 200px;
+}
+
+.cart-item-listing .cart-item-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 13px;
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: var(--bs-body-bg);
+  border: none !important;
+  border-radius: 0 0 0 0;
+  box-shadow: var(--bs-box-shadow-sm);
+  max-width: 100%;
+  height: auto;
+}
+
+.form-control {
+  border: 1px solid #e3e3e3;
+  height: 50px;
+  padding: 0 12px;
+  color: #252525;
+  transition: 0.3s;
+  background-color: #fff;
+  max-width: 100%;
+  border-radius: 0 0 0 0;
+}
+
 .masthead {
   position: relative;
   width: 100%;

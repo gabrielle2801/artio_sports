@@ -1,5 +1,8 @@
 {% extends "oscar/base.html" %}
 {% load static %}
+{% load i18n %}
+{% load category_tags %}
+
 {% block styles %}
 <link href="{% static 'dist/css/styles.css' %}" rel="stylesheet" />
 {% endblock %}
@@ -19,7 +22,6 @@
             </div>
         </div>
     </header>
-
     {# Main content of page - other layout templates may override this block #}
     {% block content_wrapper %}
         <div class="container page">
@@ -41,13 +43,14 @@
             </div>
         </div>
     {% endblock %}
+    
+    
+
     {% include "includes/footer.html" %}
     {% endblock %}
 
 {# Local scripts #}
-{% block scripts %}
-    <script type="text/javascript" src="{% static 'dist/js/scripts.js' %}"></script>
-{% endblock %}
+
 
 {% block extrascripts %}
     {% include "oscar/partials/extrascripts.html" %}
