@@ -2,53 +2,34 @@
 {% load i18n %}
 {% load image_tags %}
 {% load reviews_tags %}
+{% load currency_filters %}
+{% load purchase_info_tags %}
 
 {% block product %}
-    <article class="card">
+    <div class="img-fluid" id="e-catalogue">
         {% block product_image %}
-                {% with image=product.primary_image %}
-                    {% oscar_thumbnail image.original "x1000" upscale=False as thumb %}
-                        <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="card__background"  width="500"
-                        height="500">
-                {% endwith %}
-        {% endblock %}
-        <div class="card__content | flow">
-            <div class="card__content--container | flow">
-                
-
-        {% block product_title %}
-            <h2 class="card__title">
-                <a class="card__title" href="{{ product.get_absolute_url }}" title="{{ product.get_title }}">
-                    {{ product.get_title|truncatewords:4 }}
+            {% with image=product.primary_image %}
+                {% oscar_thumbnail image.original "x1000" upscale=False as thumb %}
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="card__background" width="500" height="500">
                 </a>
-            </h2>
-        {% endblock %}
-        {% block product_review %}
-                {% iffeature "reviews" %}
-                <p class="star-rating {{ product.rating|as_stars }}">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </p>
-                {% endiffeature %}
-            {% endblock %}
-
-        {% block product_price %}
-            <div class="card__description">
-                {% include "oscar/catalogue/partials/stock_record.html" %}
-                {% if not product.is_parent and not product.has_options %}
-                    {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+            {% endwith %}       
+            <div class="row justify-content-center align-items-start">
+                <div class="col-sm-6 ">
+                    <a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}" class="link"><p>{{ product.get_title }}</p></a>
+                </div>
+            {% purchase_info_for_product request product as session %}
+            {% if session.price.exists %}
+            <div class="col-sm-6 price_color text-right">
+                <p style="text-align:right; font-weight: 250;margin: 1px;" >{{ session.price.excl_tax|currency:session.price.currency }}</p>
                 {% endif %}
-                {% endblock %}
+                {% if not product.is_parent and not product.has_options %}
+                {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+               {% endif %}
+               {% endblock %}
             </div>
-    
-            </div>
-            
-        </div>
-            </article>
+            </div> 
+    </div>
 {% endblock %}
-
 
     

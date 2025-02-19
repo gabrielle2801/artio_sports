@@ -22,16 +22,16 @@
 
     <div class="row shipping-payment">
         {% block shipping_address %}
-            <div class="col-sm-6">
+          
                 <div class="sub-header">
                     <h2>{% trans "Shipping" %}</h2>
                 </div>
                 {% if shipping_address %}
-                    <div class="card card-body bg-light">
+                    <div class="form-group">
                         <h3>
                           {% trans "Address" %}
                           {% block shipping_address_actions %}
-                            <a href="{% url 'checkout:shipping-address' %}" class="float-right">
+                            <a href="{% url 'checkout:shipping-address' %}" class="link">
                                 {% trans "Change" %}
                             </a>
                         {% endblock %}</h3>
@@ -40,7 +40,7 @@
                                 {{ field }}<br/>
                             {% endfor %}
                         </address>
-
+                        <hr/>
                         {% if shipping_address.phone_number %}
                             <h4>{% trans "Contact" %}</h4>
                             <p>
@@ -57,51 +57,55 @@
                         {% endif %}
                     </div>
                 {% endif %}
-
+                <hr/>
                 {% if shipping_method %}
-                    <div class="card card-body bg-light card card-body bg-light-info">
-                        <h3>
-                          {% trans "Shipping method" %}
-                          {% block shipping_method_actions %}
-                            <a href="{% url 'checkout:shipping-method' %}" class="float-right">
-                                {% trans "Change" %}
-                            </a>
-                          {% endblock %}
-                        </h3>
-                        <p>{{ shipping_method.name }}
-                            {% if shipping_method.description %}
-                                - {{ shipping_method.description|safe }}
-                            {% endif %}
-                        </p>
-
-                    </div>
-                {% endif %}
-            </div>
+                    <div class="form-group">
+                        <div class="sub-header">
+                            <h3>
+                                {% trans "Shipping method" %}
+                                {% block shipping_method_actions %}
+                                  <a href="{% url 'checkout:shipping-method' %}" class="link">
+                                      {% trans "Change" %}
+                                  </a>
+                                {% endblock %}
+                              </h3>
+                              <p>{{ shipping_method.name }}
+                                  {% if shipping_method.description %}
+                                      - {{ shipping_method.description|safe }}
+                                  {% endif %}
+                              </p>
+                              <hr/>
+                          </div>
+                      {% endif %}
+                        </div>
+                       
+        
         {% endblock shipping_address %}
 
         {# You will almost certainly want to override this block to provide a payment summary #}
         {% block payment_method %}
-            <div class="col-sm-6">
+            <div class="form-group">
                 <div class="sub-header">
                     <h2>{% trans "Payment" %}</h2>
                 </div>
                 <div class="">
                     <h3>
                       {% trans "Payment" %}
-                      <a href="{% url 'checkout:payment-details' %}" class="float-right link">
+                      <a href="{% url 'checkout:payment-details' %}" class="link">
                         {% trans "Change" %}
                       </a>
                     </h3>
                     <p>{% trans "Payment details to go here" %}</p>
                 </div>
             </div>
+            <hr/>
         {% endblock payment_method %}
     </div>
 
     {% block order_contents %}
         <div class="sub-header">
             {% block order_contents_actions %}
-                <a href="{% url 'basket:summary' %}" class="float-right link">
+                <a href="{% url 'basket:summary' %}" class="link">
                     {% trans "Edit order contents" %}
                 </a>
             {% endblock %}

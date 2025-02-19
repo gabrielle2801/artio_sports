@@ -1,4 +1,5 @@
 {% extends "oscar/layout.html" %}
+{% load i18n %}
 {% load static %}
 {% load category_tags %}
 
@@ -13,15 +14,15 @@
    
 
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
-    <header>
-        <div class="page_inner">
-            <div class="row justify-content-between">
-                <img class="img-fluid" src="{% static 'src/assets/img/250210_Fond_joutes.png' %}" alt="..." />
-                
-            </div>
-        </div>
-    </header>
+    
 
+    {% block title %}
+    {% trans "Shipping address" %} | {{ block.super }}
+    {% endblock %}
+
+{% block checkout_nav %}
+    {% include 'oscar/checkout/nav.html' with step=1 %}
+{% endblock %}
 <div class="container page">
    <div class="page_inner">
         {% include 'oscar/partials/alert_messages.html' %}
@@ -53,5 +54,5 @@
 
     </div><!-- /page_inner -->
 </div>
-{% include "includes/footer.html" %}
+{% include "oscar/partials/footer_checkout.html" %}
 {% endblock %}

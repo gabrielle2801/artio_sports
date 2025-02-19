@@ -117,3 +117,5 @@ function mutedAndUnmuted () {
       $( window ).resize(function() { rescaleCaptcha(); });
     
     });
+
+   

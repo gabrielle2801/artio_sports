@@ -18,7 +18,7 @@
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ homepage_url }}">{% trans "Home" %}</a></li>
+            <li class="breadcrumb-item"><a href="{{ homepage_url }}" class="link">{% trans "Home" %}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ summary }}</li>
         </ol>
     </nav>
@@ -47,11 +47,7 @@
                     <strong>{{ num_results }}</strong> results.
                 {% endblocktrans %}
             {% endif %}
-            {% if form %}
-                <div class="float-right">
-                    {% include "oscar/partials/form_field.html" with field=form.sort_by style='horizontal' %}
-                </div>
-            {% endif %}
+            
         {% else %}
             <p>
                 {% trans "<strong>0</strong> results." %}
@@ -66,7 +62,7 @@
             <div class="row">
                     {% for tree_category in tree_categories %}
                     <div class="col">
-                            <a href="{{ tree_category.url }}" class="link">
+                            <a href="{{ tree_category.url }}" class="link" style="font-size: large; padding: 20px;">
                                 {% if tree_category.pk == category.pk %}
                                     <strong>{{ tree_category.name }}</strong>
                                 {% else %}
@@ -82,16 +78,16 @@
     {% endblock %}
     {% if products %}
         <section>
-            <div class="container d-flex justify-content-center"> 
-                <div class="row">
-                    {% block products %}
-                        {% for product in products %}
-                            {% render_product product.object %}
-                        {% endfor %}
-                    {% include "oscar/partials/pagination.html" %}
-                {% endblock %}
+            {% block products %}
+            <div class="row">
+            {% for product in products %}
+                <div class="col-lg-4 col-md-6 col-sm-12 d-flex  justify-content-center">
+                    {% render_product product.object %}
                 </div>
-            </div>
+            {% endfor %}
+        </div>
+        {% include "oscar/partials/pagination.html" %}
+    {% endblock %}
         </section>
     {% else %}
         <p class="nonefound">{% trans "No products found." %}</p>
