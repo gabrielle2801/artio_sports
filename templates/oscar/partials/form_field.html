@@ -9,12 +9,17 @@
 
     {% block control_group %}
         <div class="form-group">
-
             {% block label %}
-                {% if not nolabel and field.widget_type != 'checkbox' %}
+                {% if not nolabel and field.widget_type != 'checkbox'  %}
+                    {% if "Variante" in field.label|safe %}
                     <label for="{{ field.auto_id }}" class="{% if style|default:"stacked" != 'stacked' %}col-sm-4{% endif %} col-form-label{% if field.field.required %} required{% endif %}">
-                        {{ field.label|safe }}
+                    
                     </label>
+                    {% else %}
+                    <label for="{{ field.auto_id }}" class="{% if style|default:"stacked" != 'stacked' %}col-sm-4{% endif %} col-form-label{% if field.field.required %} required{% endif %}">
+                    {{ field.label|safe }}
+                    </label>
+                    {% endif %}
                 {% endif %}
             {% endblock %}
 

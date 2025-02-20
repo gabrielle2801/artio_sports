@@ -70,7 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'oscar.config.Shop',
     'oscar.apps.analytics.apps.AnalyticsConfig',
-    'oscar.apps.checkout.apps.CheckoutConfig',
+    'apps.checkout.apps.StripeSCASandboxCheckoutConfig',
     'oscar.apps.address.apps.AddressConfig',
     'oscar.apps.shipping.apps.ShippingConfig',
     'oscar.apps.catalogue.apps.CatalogueConfig',
@@ -98,6 +98,7 @@ INSTALLED_APPS = [
     'oscar.apps.dashboard.vouchers.apps.VouchersDashboardConfig',
     'oscar.apps.dashboard.communications.apps.CommunicationsDashboardConfig',
     'oscar.apps.dashboard.shipping.apps.ShippingDashboardConfig',
+    'oscar_stripe_sca',
 
     # 3rd-party apps that oscar depends on
     'widget_tweaks',
@@ -305,3 +306,21 @@ HAYSTACK_CONNECTIONS = {
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# =================
+# Stripe settings
+# =================
+STRIPE_COMPRESS_TO_ONE_LINE_ITEM = False
+STRIPE_USE_PRICES_API = True
+
+# Override these three.  I suggest creating a file called "settings_local.py", and adding the settings there.
+# This file is .gitignore-d so this will avoid your stripe keys going into git.
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+STRIPE_RETURN_URL_BASE = 'home'
+
+# If you don't want to use a settings_local.py, comment or remove this line.
+# from settings_local import *
+
+STRIPE_PAYMENT_SUCCESS_URL = "{0}{1}".format(STRIPE_RETURN_URL_BASE, "/checkout/preview-stripe/{0}/")
+STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(STRIPE_RETURN_URL_BASE, "/checkout/stripe-payment-cancel/{0}/")

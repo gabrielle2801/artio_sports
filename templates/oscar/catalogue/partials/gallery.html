@@ -12,9 +12,9 @@
                 <div class="carousel-inner">
                 {% for image in all_images %}
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        {% oscar_thumbnail image.original "600x600" upscale=False as thumb %}
-                        <img src="{{ thumb.url }}" class="img-fluid" alt="{{ product.get_title }}" idth="500"
-                        height="500"/>
+                        {% oscar_thumbnail image.original "700x700" upscale=False as thumb %}
+                        <img src="{{ thumb.url }}" class="img-fluid" alt="{{ product.get_title }}" idth="600"
+                        height="600"/>
                     </div>
                 {% endfor %}
                 </div>
@@ -24,6 +24,7 @@
                 </a>
                 <a class="carousel-control-next" href="#product_gallery" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
                     <span class="sr-only">{% trans "Next" %}</span>
                 </a>
             </div>
@@ -39,7 +40,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                     {% with image=product.primary_image %}
-                        {% oscar_thumbnail image.original "600x600" upscale=False as thumb %}
+                        {% oscar_thumbnail image.original "500x500" upscale=False as thumb %}
                         <img src="{{ thumb.url }}" class="img-fluid" alt="{{ product.get_title }}" idth="500"
                         height="500"/>
                     {% endwith %}

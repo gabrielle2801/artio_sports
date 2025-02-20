@@ -67,7 +67,7 @@
             {% endif %}
             <div class="row justify-content-center align-items-start">
                 <div class="col-sm-6 ">
-                    <h1>{{ product.get_title }}</h1>
+                    <h3>{{ product.get_title }}</h3>
                 </div>
               
             {% purchase_info_for_product request product as session %}
@@ -81,21 +81,17 @@
           
             {% block product_description %}
         {% if product.description %}
-        <div id="product_description" class="sub-header">
-            <h2>{% trans "Product Description" %}</h2>
-        </div>
+    
         <p>{{ product.description|safe }}</p>
          {% endif %}
             {% endblock %}
             <hr/>
-
-            {% if not product.is_parent %}
+            {% if  product.is_parent %}
                 {% block product_basket_form %}
                     {% include "oscar/catalogue/partials/add_to_basket_form.html" %}
                 {% endblock %}
             {% else %}
                 {% block variants %}
-                    <h2>{% trans 'Variants:' %}</h2>
                     {% for child in product.get_public_children %}
                         {% purchase_info_for_product request child as child_session %}
                         {% if child_session.availability.is_available_to_buy %}

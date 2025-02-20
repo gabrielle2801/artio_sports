@@ -12,13 +12,13 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
+                <a href="{{ homepage_url }}" class="link">{% trans 'Home' %}</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="{% url 'customer:summary' %}">{% trans 'Account' %}</a>
+                <a href="{% url 'customer:summary' %}" class="link">{% trans 'Account' %}</a>
             </li>
             {% block extra_breadcrumbs %}{% endblock %}
-            <li class="breadcrumb-item active" aria-current="page">{{ page_title }}</li>
+            <li class="breadcrumb-item active" class="link" aria-current="page">{{ page_title }}</li>
         </ol>
     </nav>
 {% endblock %}

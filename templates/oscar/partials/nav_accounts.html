@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load static %}
-
+{% load currency_filters %}
 <nav id="top_page" class="navbar navbar-expand-lg navbar-light bg-light accounts">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".account-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,6 +45,24 @@
                                 <i class="far fa-user mr-2"></i>
                                 {% trans "Account" %}
                             </a>
+                            <li class="nav-item mr-2">
+                                <a id="basket_link" href="{% url 'basket:summary'%}" class="nav-link">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    
+                                </a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a href="" class="nav-link">
+                                    <strong>{% trans "Basket total:" %}</strong>
+                                    {% if request.basket.is_tax_known %}
+                                        {{ request.basket.total_incl_tax|currency:request.basket.currency }}
+                                    {% else %}
+                                        {{ request.basket.total_excl_tax|currency:request.basket.currency }}
+                                    {% endif %}
+                                </a>
+                                
+                            </li>
+
                         {% endif %}
                     </li>
                     {% if user.is_staff or perms.partner.dashboard_access %}

@@ -20758,6 +20758,11 @@ body {
   margin-top: 30px;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #282d32 !important;
+}
+
 p {
   font-family: "Helvetica Neue";
   text-align: justify;

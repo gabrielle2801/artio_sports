@@ -145,13 +145,13 @@
                                 {{ form.id }}
                                 {% with image=form.instance.product.primary_image %}
                                     {% oscar_thumbnail image.original "100x100" upscale=False as thumb %}
-                                    <a href="{{ form.instance.product.get_absolute_url }}">
+                                    <a href="{{ form.instance.product.get_absolute_url }}" class="link">
                                         <img class="card card-body mx-auto" src="{{ thumb.url }}" alt="{{ form.instance.product.get_title }}">
                                     </a>
                                 {% endwith %}
                             </div>
                             <div class="col-md-6">
-                                <h3><a href="{{ form.instance.product.get_absolute_url }}">{{ form.instance.description }}</a></h3>
+                                <h3><a href="{{ form.instance.product.get_absolute_url }}" class="link">{{ form.instance.description }}</a></h3>
                                 <p class="availability {{ session.availability.code }}">{{ session.availability.message }}</p>
                                 <a href="#" data-id="{{ forloop.counter0 }}" data-behaviours="remove" class="link">{% trans "Remove" %}</a>
                                 <div style="display:none">
