@@ -12,7 +12,75 @@
         #{fade-out($black, 0.7)} 0%,
         #{fade-out($black, 0.3)} 75%,
         $black 100%),
-    url("../assets/img/beautiful-mountains-world.original.jpg");
+    url("../assets/img/250119_Fond_video.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+    h1 {
+        font-family: "Helvetica Neue";
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.8rem;
+        background: linear-gradient(fade-out($white, 0.1), fade-out($white, 1));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    #text {
+        position:absolute;
+        top: 50%;
+        width: 100%;
+        font-family: "Helvetica Neue";
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.8rem;
+        background: linear-gradient(fade-out($white, 0.1), fade-out($white, 1));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+    }
+
+    h2 {
+        font-family: "Helvetica Neue";
+        max-width: 20rem;
+        font-size: 200;
+    }
+
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: auto;
+        padding: 0;
+
+        h1 {
+            font-size: 6.5rem;
+            line-height: 6.5rem;
+            letter-spacing: 0.8rem;
+        }
+
+        h2 {
+            max-width: 30rem;
+            font-size: 1.25rem;
+        }
+    }
+}
+.masthead_mention {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom,
+        #{fade-out($black, 0.7)} 0%,
+        #{fade-out($black, 0.3)} 75%,
+        $black 100%),
+    url("../assets/img/fond-texte.png");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -28,7 +96,70 @@
         background-clip: text;
     }
 
+    
+
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: auto;
+        padding: 0;
+
+        h1 {
+            font-size: 6.5rem;
+            line-height: 6.5rem;
+            letter-spacing: 0.8rem;
+        }
+
+      
+    }
+}
+
+.masthead_joutes {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom,
+        #{fade-out($black, 0.7)} 0%,
+        #{fade-out($black, 0.3)} 75%,
+        $black 100%),
+    url("../assets/img/250210_Fond_joutes.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+    h1 {
+        font-family: "Helvetica Neue";
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.8rem;
+        background: linear-gradient(fade-out($white, 0.1), fade-out($white, 1));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    #text {
+        position:absolute;
+        top: 50%;
+        width: 100%;
+        font-family: "Helvetica Neue";
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: 0.8rem;
+        background: linear-gradient(fade-out($white, 0.1), fade-out($white, 1));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+    }
+
     h2 {
+        font-family: "Helvetica Neue";
         max-width: 20rem;
         font-size: 200;
     }
@@ -41,7 +172,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-        height: 100vh;
+        height: auto;
         padding: 0;
 
         h1 {
@@ -55,4 +186,8 @@
             font-size: 1.25rem;
         }
     }
+}
+
+.img_header {
+    margin-bottom: 50px;
 }

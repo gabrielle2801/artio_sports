@@ -3,13 +3,19 @@
 // 
 
 .projects-section {
-    padding: 10rem 0;
+    padding: 2rem;
+    p {
+        font-family: "Helvetica Neue";
+        text-align: justify;
+        font-weight: 300;
+        font-size: smaller;
+    }
 
     .featured-text {
         padding: 2rem;
 
         @include media-breakpoint-up(lg) {
-            padding: 0 0 0 2rem;
+            padding: 0 2 0 2rem;
             border-left: 0.5rem solid $primary;
         }
         
@@ -18,7 +24,7 @@
         padding: 2rem;
 
         @include media-breakpoint-up(lg) {
-            padding: 0 0 0 2rem;
+            padding: 0 2 0 2rem;
             border-right: 0.5rem solid $primary;
         }
         

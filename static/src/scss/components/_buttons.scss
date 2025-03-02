@@ -1,13 +1,97 @@
 // 
 // Buttons
 // 
-
+.button {
+    border-radius: 0 0 0 0 !important;
+}
+.btn-primary {
+    background-color: #282d32 !important;
+    outline: none;
+    border: 0px;
+    box-shadow: none;
+  }
+  
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #000000;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none;
+  }
+  
 .btn {
-    box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-    padding: 1.25rem 2rem;
-    font-family: $font-family-special;
-    font-size: 80%;
+    padding: 0 30px;
+    margin: 5px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #282d32;
+    background-color: #282d32;
+    color: #fff;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    vertical-align: top;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s;
     text-transform: uppercase;
-    letter-spacing: 0.15rem;
-    border: 0;
+    letter-spacing: 2px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    text-transform: lowercase;
+}
+
+.submit {
+    padding: 0 30px;
+    margin: 5px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #282d32;
+    background-color: #282d32;
+    color: #fff;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    vertical-align: top;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    text-transform: lowercase;
+}
+
+.submit-danger {
+    padding: 0 30px;
+    margin: 5px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #b03a2e ;
+    background-color: #b03a2e ;
+    color: #fff;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    vertical-align: top;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    text-transform: lowercase;
 }

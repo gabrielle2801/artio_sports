@@ -36,7 +36,9 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-grayscale.git"
     },
     "dependencies": {
-        "bootstrap": "5.2.3"
+        "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.11.3",
+        "startbootstrap-shop-homepage": "^5.0.6"
     },
     "devDependencies": {
         "autoprefixer": "10.4.14",
