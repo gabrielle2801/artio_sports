@@ -72,11 +72,11 @@ INSTALLED_APPS = [
     'oscar.apps.analytics.apps.AnalyticsConfig',
     'apps.checkout.apps.StripeSCASandboxCheckoutConfig',
     'oscar.apps.address.apps.AddressConfig',
-    'oscar.apps.shipping.apps.ShippingConfig',
+    'apps.shipping.apps.ShippingConfig',
     'oscar.apps.catalogue.apps.CatalogueConfig',
     'oscar.apps.catalogue.reviews.apps.CatalogueReviewsConfig',
     'oscar.apps.communication.apps.CommunicationConfig',
-    'oscar.apps.partner.apps.PartnerConfig',
+    'apps.partner.apps.PartnerConfig',
     'oscar.apps.basket.apps.BasketConfig',
     'oscar.apps.payment.apps.PaymentConfig',
     'oscar.apps.offer.apps.OfferConfig',
@@ -209,7 +209,7 @@ TIME_ZONE = "Europe/Paris"
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -283,6 +283,7 @@ DJANGO_VITE_DEV_MODE = True
 # Recaptcha set
 RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_SITE_KEY")
 RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
+
 NOCAPTCHA = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
@@ -306,7 +307,19 @@ HAYSTACK_CONNECTIONS = {
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-
+OSCAR_INITIAL_ORDER_STATUS = "Pending"
+OSCAR_INITIAL_LINE_STATUS = "Pending"
+OSCAR_ORDER_STATUS_PIPELINE = {
+    "Pending": (
+        "Being processed",
+        "Cancelled",
+    ),
+    "Being processed": (
+        "Processed",
+        "Cancelled",
+    ),
+    "Cancelled": (),
+}
 # =================
 # Stripe settings
 # =================
@@ -317,10 +330,12 @@ STRIPE_USE_PRICES_API = True
 # This file is .gitignore-d so this will avoid your stripe keys going into git.
 STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
-STRIPE_RETURN_URL_BASE = 'home'
+STRIPE_RETURN_URL_BASE = 'http://127.0.0.1:8000'
 
 # If you don't want to use a settings_local.py, comment or remove this line.
 # from settings_local import *
 
-STRIPE_PAYMENT_SUCCESS_URL = "{0}{1}".format(STRIPE_RETURN_URL_BASE, "/checkout/preview-stripe/{0}/")
-STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(STRIPE_RETURN_URL_BASE, "/checkout/stripe-payment-cancel/{0}/")
+STRIPE_PAYMENT_SUCCESS_URL = "{0}{1}".format(
+    STRIPE_RETURN_URL_BASE, "/boutique/checkout/preview-stripe/{0}/")
+STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(
+    STRIPE_RETURN_URL_BASE, "/boutique/checkout/stripe-payment-cancel/{0}/")

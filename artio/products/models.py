@@ -78,7 +78,8 @@ class ProductArtio(models.Model):
     name = models.CharField(max_length=100, blank=True)
     version = models.CharField(max_length=100, blank=True)
     description = models.TextField(blank=True)
-    pdf = models.FileField(upload_to='pdf', blank=True)
+    pdf = models.FileField(upload_to='pdf', blank=True, null=True)
+    img = models.ImageField(upload_to='catalogue_sete/', blank=True, null=True)
 
     def __str__(self):
         return self.name

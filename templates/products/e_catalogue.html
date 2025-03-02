@@ -17,7 +17,7 @@
         <p class="d-flex justify-content-center">{{product.name}}</p>
             {% if product.pdf %}
             <div class="d-flex justify-content-center">
-                
+                <embed src="{{ product.pdf.url }}" type="application/pdf" height="700px" width="500px">
             </div>
             {% endif %}
         {% endfor %}

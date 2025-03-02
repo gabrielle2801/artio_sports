@@ -60,15 +60,21 @@
        <section>
         <div class="container d-flex justify-content-center">
             <div class="row">
+                
                     {% for tree_category in tree_categories %}
                     <div class="col">
+                        {% if  tree_category.name == 'catalogue'   %}
+                        <a class="nav-link" href="{% url 'j_catalogue' %}">Catalogue</a>
+                        {% else %}
                             <a href="{{ tree_category.url }}" class="link" style="font-size: large; padding: 20px;">
-                                {% if tree_category.pk == category.pk %}
+                                {% if tree_category.pk == category.pk%}
                                     <strong>{{ tree_category.name }}</strong>
                                 {% else %}
                                     {{ tree_category.name }}
                                 {% endif %}
                             </a>
+                            {% endif %}
+
                     </div>
                     {% endfor %}
                     {% endif %}

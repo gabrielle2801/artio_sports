@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block checkout_nav %}
-    {% include 'oscar/checkout/nav.html' %}
+{% include 'oscar/checkout/nav.html'%}
 {% endblock %}
 
 {% block content %}
@@ -32,7 +32,7 @@
                           {% trans "Address" %}
                           {% block shipping_address_actions %}
                             <a href="{% url 'checkout:shipping-address' %}" class="link">
-                                {% trans "Change" %}
+                               
                             </a>
                         {% endblock %}</h3>
                         <address>
@@ -58,57 +58,19 @@
                     </div>
                 {% endif %}
                 <hr/>
-                {% if shipping_method %}
-                    <div class="form-group">
-                        <div class="sub-header">
-                            <h3>
-                                {% trans "Shipping method" %}
-                                {% block shipping_method_actions %}
-                                  <a href="{% url 'checkout:shipping-method' %}" class="link">
-                                      {% trans "Change" %}
-                                  </a>
-                                {% endblock %}
-                              </h3>
-                              <p>{{ shipping_method.name }}
-                                  {% if shipping_method.description %}
-                                      - {{ shipping_method.description|safe }}
-                                  {% endif %}
-                              </p>
-                              <hr/>
-                          </div>
-                      {% endif %}
+                
                         </div>
                        
         
         {% endblock shipping_address %}
 
         {# You will almost certainly want to override this block to provide a payment summary #}
-        {% block payment_method %}
-            <div class="form-group">
-                <div class="sub-header">
-                    <h2>{% trans "Payment" %}</h2>
-                </div>
-                <div class="">
-                    <h3>
-                      {% trans "Payment" %}
-                      <a href="{% url 'checkout:payment-details' %}" class="link">
-                        {% trans "Change" %}
-                      </a>
-                    </h3>
-                    <p>{% trans "Payment details to go here" %}</p>
-                </div>
-            </div>
-            <hr/>
-        {% endblock payment_method %}
+       
     </div>
 
     {% block order_contents %}
         <div class="sub-header">
-            {% block order_contents_actions %}
-                <a href="{% url 'basket:summary' %}" class="link">
-                    {% trans "Edit order contents" %}
-                </a>
-            {% endblock %}
+            
 
             <h2>{% trans "Order contents" %}</h2>
         </div>
@@ -139,7 +101,7 @@
                         {{ line.quantity }}
                     </div>
                     <div class="col-sm-2 text-right">
-                        <p class="price_color">
+                        <p class="price_color" id="price_color_tk">
                             {% if not show_tax_separately and line.is_tax_known %}
                                 {{ line.line_price_incl_tax|currency:basket.currency }}
                             {% else %}

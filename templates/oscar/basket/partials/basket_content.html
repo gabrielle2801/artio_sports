@@ -34,7 +34,8 @@
     <div class="row">
         <div class="col-12">
             <div class="cart-item-block cart_item main">
-                <form method="post" class="cart-discount-summary" id="basket_formset">
+               
+                <form method="post" class="cart-discount-summary" id="basket_formset" onsubmit="return checkForm(this);">
                     {% csrf_token %}
                     {{ formset.management_form }}
                     {% for form in formset %}
@@ -64,39 +65,31 @@
                                             </div>
                                         </div>
                                             <div class="basket-line-actions">
-                                                <a href="#" data-id="{{ forloop.counter0 }}" data-behaviours="remove" class="link">{% trans "Remove" %}</a>
-                                                {% if user.is_authenticated %}
-                                                    | <a href="#" data-id="{{ forloop.counter0 }}" data-behaviours="save" class="link">{% trans "Save for later" %}</a>
-                                                {% endif %}
-                                                <div style="display:none">
-                                                    {{ form.save_for_later }}
-                                                    {{ form.DELETE }}
-                                                </div>
                                                 {% for field_errors in form.errors.values %}
                                                     {% for error in field_errors %}
                                                         <span class="error-block"><i class="fas fa-exclamation"></i> {{ error }}</span>
                                                     {% endfor %}
-        
                                                 {% endfor %}
                                             </div>
-        
                                     </div>
                                     <div class="col-md-1">
                                         {% if not line.unit_price_incl_tax and not line.unit_tax_excl_tax %}
                                             <p class="text-right">&mdash;</p>
+                                     
                                         {% else %}
                                             <p class="price_color text-right">
                                                 <span class="price-title d-md-none">{% trans "Price" %}:</span>
-                                                {% if line.is_tax_known %}
-                                                    {{ line.unit_price_incl_tax|currency:line.price_currency }}
+                                                {% purchase_info_for_product request product as session %}
+                                                {% if session.price.is_tax_known %}
+                                                   {{ session.price.incl_tax|currency:session.price.currency }}
                                                 {% else %}
-                                                    {{ line.unit_price_excl_tax|currency:line.price_currency }}
+                                                    Price is {{ session.price.excl_tax|currency:session.price.currency }} +
+                                                    tax
                                                 {% endif %}
                                             </p>
                                         {% endif %}
                                     </div>
                                     <div class="col-md-2">
-        
                                         {% if not line.line_price_incl_tax and not line_price_excl_tax %}
                                             <p class="text-right">&mdash;</p>
                                         {% else %}
@@ -115,6 +108,7 @@
                         {% endwith %}
                         <hr />
                     {% endfor %}
+
                 </form>
             </div>
         </div>
@@ -161,7 +155,7 @@
                             </div>
                             {% purchase_info_for_product request form.instance.product as saved %}
                             <div class="col-md-2 text-center">
-                                <p class="price_color">
+                                <p class="price_color text-center">
                                     {% if saved.price.is_tax_known %}
                                         {{ saved.price.incl_tax|currency:saved.price.currency }}
                                     {% else %}
@@ -183,26 +177,7 @@
     {% endif %}
 {% endblock %}
 {% if not basket.is_empty %}
-{% block vouchers %}
-        {# Hide the entire section if a custom BasketView doesn't pass in a voucher form #}
-        {% if voucher_form %}
-            <div class="col-sm-6">
-                <div class="sub-header">
-                    <h2>{% trans "Voucher/promo code" %}</h2>
-                </div>
-                <p id="voucher_form_link"><a href="#voucher" class="submit">{% trans "I have a voucher code..." %}</a></p>
 
-                <div id="voucher_form_container" style="display:none">
-                    <form id="voucher_form" action="{% url 'basket:vouchers-add' %}" method="post">
-                        {% csrf_token %}
-                        {% include "oscar/partials/form_fields.html" with form=voucher_form %}
-                        <button type="submit" class="submit" data-loading-text="{% trans 'Adding...' %}">{% trans "Add voucher" %}</button>
-                        {% trans "or" %} <a href="#" id="voucher_form_cancel">{% trans "cancel" %}</a>
-                    </form>
-                </div>
-            </div>
-        {% endif %}
-    {% endblock vouchers %}
     {% block baskettotals %}
     <div class="row justify-content-md-between"> 
         <div class="col-sm-4 offset-sm-8">
@@ -216,8 +191,11 @@
     {% block formactions %}
     <div class="form-group clearfix">
         <div class="row">
-            <div class="col-sm-4 offset-sm-8">
-                <a href="{% url 'checkout:index' %}" class="submit">{% trans "Proceed to checkout" %}</a>
+            <div class="col-sm-4 offset-sm-8">              
+                <p> En cliquant sur « procéder au paiement », et après avoir pris connaissance des <a href="{% url 'terms_condition_sale' %}" class="link"
+                    style="text-decoration: underline !important;font-size: small;">Conditions générales de vente</a>, le Client déclare accepter pleinement et sans réserve l’intégralité des CGV de Artio.
+                    </p>
+                <a href="{% url 'checkout:index' %}"  class="submit" >{% trans "Proceed to checkout" %}</a>
             </div>
         </div>
     </div>

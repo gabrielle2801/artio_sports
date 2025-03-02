@@ -27,15 +27,12 @@
         {% endblocktrans %}
         {% trans "Please make a note of this reference or print this page and quote it in any communication with us regarding your order." %}
     </p>
-
+    <hr />
     <div class="row shipping-payment">
         <div class="col-sm-6">
             {% block shipping_info %}
-                <div class="sub-header">
-                    <h2>{% trans "Shipping" %}</h2>
-                </div>
                 <div class="form-group">
-                    <h3>{% trans "Address" %}</h3>
+                    <h4>{% trans "Address" %}</h4>
                     {% if order.shipping_address %}
                         <address>
                             {% for field in order.shipping_address.active_address_fields %}
@@ -62,52 +59,13 @@
                     {% endif %}
                 </div>
 
-                <div class="form-group">
-                    <h3>{% trans "Shipping method" %}</h3>
-                    <p>{{ order.shipping_method }}</p>
-                </div>
+                
             {% endblock %}
         </div>
 
-        <div class="col-sm-6">
-            {% block payment_info %}
-                <div class="sub-header">
-                    <h2>{% trans "Payment" %}</h2>
-                </div>
-                <div class="form-group">
-                    <h3>{% trans "Payment" %}</h3>
-                    {% for source in order.sources.all %}
-                        <p>
-                        {% if source.reference %}
-                            {% blocktrans with amount=source.amount_allocated|currency:source.currency type=source.source_type.name reference=source.reference %}
-                                Allocation of {{ amount }} from type {{ type }} (reference: {{ reference }})
-                            {% endblocktrans %}
-                        {% else %}
-                            {% blocktrans with amount=source.amount_allocated|currency:source.currency type=source.source_type.name %}
-                                Allocation of {{ amount }} from type {{ type }}
-                            {% endblocktrans %}
-                        {% endif %}
-                        </p>
-                    {% empty %}
-                        <p>
-                        {% trans "No payment was required for this order." %}
-                        </p>
-                    {% endfor %}
-
-                    {% if order.billing_address %}
-                        <h4>{% trans "Billing address" %}</h4>
-                        <address>
-                            {% for field in order.billing_address.active_address_fields %}
-                                {{ field }}<br/>
-                            {% endfor %}
-                        </address>
-                    {% endif %}
-                </div>
-
-            {% endblock %}
-        </div>
+      
     </div>
-
+    <hr />
     {% block order_contents %}
         <div class="sub-header">
             <h2>{% trans "Order contents" %}</h2>
@@ -142,7 +100,7 @@
                         {{ line.quantity }}
                     </div>
                     <div class="col-sm-2 text-right">
-                        <p class="price_color">
+                        <p class="price_color_tk" id="price_color_tk">
                             {% if show_tax_separately %}
                                 {{ line.line_price_before_discounts_excl_tax|currency:order.currency }}
                             {% else %}
@@ -153,7 +111,7 @@
                 </div>
             </div>
         {% endfor %}
-
+        <hr />
         {% block basket_totals %}
             <div class="row">
                 <div class="col-sm-6">&nbsp;</div>

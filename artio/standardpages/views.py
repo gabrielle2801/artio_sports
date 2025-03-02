@@ -8,3 +8,11 @@ class MentionView(TemplateView):
 
 class PolicyView(TemplateView):
     template_name = 'standardpages/policy_page.html'
+
+
+class TermsConditionView(TemplateView):
+    template_name = 'standardpages/terms_condition_sale.html'
+
+
+
+

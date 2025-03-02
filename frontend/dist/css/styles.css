@@ -10,7 +10,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -20767,7 +20766,14 @@ p {
   font-family: "Helvetica Neue";
   text-align: justify;
   font-weight: 200;
-  font-size: larger;
+  font-size: small;
+}
+
+#price_color_tk {
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+  font-size: medium;
+  text-align: end;
 }
 
 .link {
@@ -21088,9 +21094,9 @@ h2, .h2 {
 }
 .about-section p {
   font-family: "Helvetica Neue";
-  text-align: justify;
+  text-align: justify !important;
   font-weight: 300;
-  font-size: larger;
+  font-size: smaller;
 }
 .about-section h2, .about-section .h2 {
   font-family: "Helvetica Neue";
@@ -21111,7 +21117,7 @@ h2, .h2 {
   font-family: "Helvetica Neue";
   text-align: justify;
   font-weight: 300;
-  font-size: larger;
+  font-size: smaller;
 }
 .projects-section .featured-text {
   padding: 2rem;
@@ -21266,13 +21272,14 @@ button:focus {
   outline-width: 0;
 }
 
-input, label {
+input {
   display: block;
   float: left;
+  color: #252525;
 }
 
 *, body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -21281,7 +21288,6 @@ input, label {
 
 .section {
   height: 100%;
-  background-color: #152733;
 }
 
 .form-holder {
@@ -21302,7 +21308,7 @@ input, label {
 }
 
 .form-content .form-items {
-  border: 3px solid #fff;
+  border: 3px solid #252525;
   padding: 40px;
   display: inline-block;
   width: 100%;
@@ -21313,7 +21319,7 @@ input, label {
 }
 
 .form-content h3, .form-content .h3 {
-  color: #fff;
+  color: #252525;
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -21325,7 +21331,7 @@ input, label {
 }
 
 .form-content p {
-  color: #fff;
+  color: #252525;
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -21334,33 +21340,33 @@ input, label {
 }
 
 .form-content label, .was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .form-check-input:valid ~ .form-check-label {
-  color: #fff;
+  color: #252525;
 }
 
 .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
   width: 100%;
+  box-sizing: border-box;
   padding: 9px 20px;
   text-align: left;
   border: 0;
   outline: 0;
-  border-radius: 6px;
-  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
   font-size: 15px;
   font-weight: 300;
-  color: #8D8D8D;
   transition: all 0.3s ease;
   margin-bottom: 16px;
 }
 
 .btn-primary {
-  background-color: #6C757D;
+  background-color: #252525;
   outline: none;
   border: 0px;
   box-shadow: none;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: #495056;
+  background-color: #252525;
   outline: none !important;
   border: none !important;
   box-shadow: none;
@@ -21373,11 +21379,11 @@ input, label {
   border-radius: 6px;
   text-align: left;
   background-color: #fff;
-  border: 0;
+  border: solid 1px #252525 !important;
   font-size: 15px;
   font-weight: 300;
-  color: #8D8D8D;
-  outline: none;
+  color: #252525;
+  outline-color: #252525;
   resize: none;
   height: 120px;
   transition: none;
@@ -21387,7 +21393,7 @@ input, label {
 .form-content textarea:hover, .form-content textarea:focus {
   border: 0;
   background-color: #ebeff8;
-  color: #8D8D8D;
+  color: #252525;
 }
 
 .mv-up {
@@ -21453,7 +21459,7 @@ input, label {
     min-width: 240px;
   }
   .form-content .form-items {
-    border: 3px solid #fff;
+    border: 3px solid #252525;
     padding: 40px;
     display: inline-block;
     width: 100%;
@@ -21471,6 +21477,7 @@ input, label {
   color: #f0f9ff;
   background-color: #282d32;
   bottom: 0px;
+  margin-top: 25px;
 }
 
 .footer-dark h3, .footer-dark .h3 {
