@@ -4,12 +4,25 @@
 
 .projects-section {
     padding: 2rem;
+<<<<<<< HEAD
+=======
+    p {
+        font-family: "Helvetica Neue";
+        text-align: justify;
+        font-weight: 300;
+        font-size: smaller;
+    }
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 
     .featured-text {
         padding: 2rem;
 
         @include media-breakpoint-up(lg) {
+<<<<<<< HEAD
             padding: 0 0 0 2rem;
+=======
+            padding: 0 2 0 2rem;
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
             border-left: 0.5rem solid $primary;
         }
         
@@ -18,7 +31,11 @@
         padding: 2rem;
 
         @include media-breakpoint-up(lg) {
+<<<<<<< HEAD
             padding: 0 0 0 2rem;
+=======
+            padding: 0 2 0 2rem;
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
             border-right: 0.5rem solid $primary;
         }
         

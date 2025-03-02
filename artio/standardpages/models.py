@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 from django.db import models
+=======
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 
 from wagtail.models import Page
 from wagtail.fields import RichTextField
@@ -13,5 +16,8 @@ class MentionIndexPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
     ]
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd

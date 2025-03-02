@@ -1,0 +1,35 @@
+{% load display_tags %}
+{% load i18n %}
+{% load image_tags %}
+{% load reviews_tags %}
+{% load currency_filters %}
+{% load purchase_info_tags %}
+
+{% block product %}
+    <div class="img-fluid" id="e-catalogue">
+        {% block product_image %}
+            {% with image=product.primary_image %}
+                {% oscar_thumbnail image.original "x1000" upscale=False as thumb %}
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{{ thumb.url }}" alt="{{ product.get_title }}" class="card__background" width="500" height="500">
+                </a>
+            {% endwith %}       
+            <div class="row justify-content-center align-items-start">
+                <div class="col-sm-6 ">
+                    <a href="{{ product.get_absolute_url }}" title="{{ product.get_title }}" class="link"><p>{{ product.get_title }}</p></a>
+                </div>
+            {% purchase_info_for_product request product as session %}
+            {% if session.price.exists %}
+            <div class="col-sm-6 price_color text-right">
+                <p style="text-align:right; font-weight: 250;margin: 1px;" >{{ session.price.incl_tax|currency:session.price.currency }}</p>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+                {% endif %}
+               {% endblock %}
+            </div>
+            </div> 
+    </div>
+{% endblock %}
+
+    

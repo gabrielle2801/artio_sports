@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import environ
+<<<<<<< HEAD
 
+=======
+from oscar.defaults import * # noqa
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 # from config import env
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,6 +32,10 @@ env.read_env(os.path.join(BASE_DIR, '.env'))
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+    'haystack',
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -64,8 +72,55 @@ INSTALLED_APPS = [
     "artio.contact",
     "artio.standardpages",
     "artio.base",
+<<<<<<< HEAD
 ]
 
+=======
+    "artio.products",
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'oscar.config.Shop',
+    'oscar.apps.analytics.apps.AnalyticsConfig',
+    'apps.checkout.apps.StripeSCASandboxCheckoutConfig',
+    'oscar.apps.address.apps.AddressConfig',
+    'apps.shipping.apps.ShippingConfig',
+    'oscar.apps.catalogue.apps.CatalogueConfig',
+    'oscar.apps.catalogue.reviews.apps.CatalogueReviewsConfig',
+    'oscar.apps.communication.apps.CommunicationConfig',
+    'apps.partner.apps.PartnerConfig',
+    'oscar.apps.basket.apps.BasketConfig',
+    'oscar.apps.payment.apps.PaymentConfig',
+    'oscar.apps.offer.apps.OfferConfig',
+    'oscar.apps.order.apps.OrderConfig',
+    'oscar.apps.customer.apps.CustomerConfig',
+    'oscar.apps.search.apps.SearchConfig',
+    'oscar.apps.voucher.apps.VoucherConfig',
+    'oscar.apps.wishlists.apps.WishlistsConfig',
+    'oscar.apps.dashboard.apps.DashboardConfig',
+    'oscar.apps.dashboard.reports.apps.ReportsDashboardConfig',
+    'oscar.apps.dashboard.users.apps.UsersDashboardConfig',
+    'oscar.apps.dashboard.orders.apps.OrdersDashboardConfig',
+    'oscar.apps.dashboard.catalogue.apps.CatalogueDashboardConfig',
+    'oscar.apps.dashboard.offers.apps.OffersDashboardConfig',
+    'oscar.apps.dashboard.partners.apps.PartnersDashboardConfig',
+    'oscar.apps.dashboard.pages.apps.PagesDashboardConfig',
+    'oscar.apps.dashboard.ranges.apps.RangesDashboardConfig',
+    'oscar.apps.dashboard.reviews.apps.ReviewsDashboardConfig',
+    'oscar.apps.dashboard.vouchers.apps.VouchersDashboardConfig',
+    'oscar.apps.dashboard.communications.apps.CommunicationsDashboardConfig',
+    'oscar.apps.dashboard.shipping.apps.ShippingDashboardConfig',
+    'oscar_stripe_sca',
+
+    # 3rd-party apps that oscar depends on
+    'widget_tweaks',
+    'treebeard',
+    'sorl.thumbnail',   # Default thumbnail backend, can be replaced
+    'django_tables2',
+]
+
+SITE_ID = 1
+
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -76,6 +131,11 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+<<<<<<< HEAD
+=======
+    'oscar.apps.basket.middleware.BasketMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -85,6 +145,10 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(PROJECT_DIR, "templates"),
+<<<<<<< HEAD
+=======
+            os.path.join(BASE_DIR, "templates"),
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -95,6 +159,13 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 # Add this to register the _settings_ context processor:
                 "wagtail.contrib.settings.context_processors.settings",
+<<<<<<< HEAD
+=======
+                'oscar.apps.search.context_processors.search_form',
+                'oscar.apps.checkout.context_processors.checkout',
+                'oscar.apps.communication.notifications.context_processors.notifications',
+                'oscar.core.context_processors.metadata',
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
             ],
         },
     },
@@ -153,6 +224,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
+<<<<<<< HEAD
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -160,6 +232,15 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+=======
+LANGUAGE_CODE = "fr"
+
+TIME_ZONE = "Europe/Paris"
+
+USE_I18N = True
+
+USE_TZ = False
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 
 
 # Static files (CSS, JavaScript, Images)
@@ -233,7 +314,66 @@ DJANGO_VITE_DEV_MODE = True
 # Recaptcha set
 RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_SITE_KEY")
 RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
+<<<<<<< HEAD
 NOCAPTCHA = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+=======
+
+NOCAPTCHA = True
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTH CONFIGURATION
+AUTHENTICATION_BACKENDS = (
+    'oscar.apps.customer.auth_backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+# HAYSTACK_CONNECTIONS
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
+        "PATH": os.path.join(BASE_DIR, "whoosh_index"),
+        "INCLUDE_SPELLING": True,
+    },
+}
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+OSCAR_INITIAL_ORDER_STATUS = "Pending"
+OSCAR_INITIAL_LINE_STATUS = "Pending"
+OSCAR_ORDER_STATUS_PIPELINE = {
+    "Pending": (
+        "Being processed",
+        "Cancelled",
+    ),
+    "Being processed": (
+        "Processed",
+        "Cancelled",
+    ),
+    "Cancelled": (),
+}
+# =================
+# Stripe settings
+# =================
+STRIPE_COMPRESS_TO_ONE_LINE_ITEM = False
+STRIPE_USE_PRICES_API = True
+
+# Override these three.  I suggest creating a file called "settings_local.py", and adding the settings there.
+# This file is .gitignore-d so this will avoid your stripe keys going into git.
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+STRIPE_RETURN_URL_BASE = 'http://127.0.0.1:8000'
+
+# If you don't want to use a settings_local.py, comment or remove this line.
+# from settings_local import *
+
+STRIPE_PAYMENT_SUCCESS_URL = "{0}{1}".format(
+    STRIPE_RETURN_URL_BASE, "/boutique/checkout/preview-stripe/{0}/")
+STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(
+    STRIPE_RETURN_URL_BASE, "/boutique/checkout/stripe-payment-cancel/{0}/")
+>>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd

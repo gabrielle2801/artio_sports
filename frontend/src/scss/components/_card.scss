@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+
+:root {
+  /* Colors */
+  --brand-color: #282d32;
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  /* Fonts */
+  --font-title: "Helvetica", sans-serif;
+  --font-text: "Lato", sans-serif;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.bi-bag {
+  position: relative;
+  display: flex;
+  color: #000000;
+  font-size: x-large;
+}
+/* Remove default margin */
+
+#e-catalogue {
+  margin-top: 30px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #282d32 !important;
+}
+
+p {
+  font-family: "Helvetica Neue";
+  text-align: justify;
+  font-weight: 200;
+  font-size: small;
+}
+#price_color_tk {
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+  font-size: medium;
+  text-align: end;
+}
+
+.link {
+  color: #282d32;
+  text-decoration: none !important;
+  font-size: medium;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-family: var(--font-title);
+  color: var(--white);
+  line-height: 1.1;
+}
+
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* CARD COMPONENT */
+
+.card {
+    padding: 0px 0px !important;
+    margin-left: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none !important;
+    display: grid;
+    place-items: center;
+    width: 80vw;
+    max-width: 21.875rem;
+    overflow: hidden;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  }
+  
+
+
+.card__background {
+  object-fit: cover;
+  max-width: 100%;
+  place-items: center;
+}
+

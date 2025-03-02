@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block nav %}  
+{% include "includes/navbar_products.html" %}
+{% endblock %}
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<header class="masthead img-fluid">
+    <h1 class="justify-content-center display-4" id="text">e-catalogue</h1>
+</header>
+{% endblock %}
+{% block content %}
+<div class="jumbotron justify-content-center">
+    {% if joute_catalog %}
+        {% for product in joute_catalog %}
+            {% if product.pdf and product.name == 'catalogue des articles joutes de Sète' %}
+            <p class="d-flex justify-content-center">{{product.name}}</p>
+            <hr class="my-4">
+            <div class="d-flex justify-content-center">
+                <embed src="{{ product.pdf.url }}" type="application/pdf" height="900px" width="700px">
+            </div>
+            {% else %}
+            
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}

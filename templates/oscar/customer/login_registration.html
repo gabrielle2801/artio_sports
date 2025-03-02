@@ -1,0 +1,55 @@
+{% extends "oscar/layout.html" %}
+
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Login or register' %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ homepage_url }}"><i class="fa-solid fa-angle-left" style="font-size: 2em; color:#282d32;"></i></a></li>
+        </ol>
+    </nav>
+{% endblock breadcrumbs %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-start">
+        <div class="col-12 col-md-6">
+            <div class="login_form">
+                <div class="inside">
+                    <div class="title">Déja client
+                        <form  action="{{ request.get_full_path }}" method="post">
+                            <h2>{% trans 'Log In' %}</h2>
+                            {% csrf_token %}
+                            {% include "oscar/partials/form_fields.html" with form=login_form %}
+                            <button name="login_submit" type="submit" value="Log In" class="submit" data-loading-text="{% trans "Logging in..." %}">{% trans 'Log In' %}</button>
+                            <p  style="text-align:center"><a href="{% url 'password-reset' %}" class="link">{% trans "I've forgotten my password" %}</a></p>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-start">
+        <div class="col-12 col-md-6">
+            <div class="register_form">
+                <div class="inside">
+                    <div class="title">Nouveau client
+                        <form id="register_form" action="{{ request.get_full_path }}" method="post">
+                            <h2>{% trans 'Register' %}</h2>
+                            {% csrf_token %}
+                            {% include "oscar/partials/form_fields.html" with form=registration_form %}
+                            <button name="registration_submit" type="submit" value="Register" class="submit" data-loading-text="{% trans 'Registering...' %}">{% trans 'Register' %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    
+</div>
+{% endblock %}

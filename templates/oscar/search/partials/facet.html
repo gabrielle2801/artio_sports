@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<dl>
+    <dt class="nav-header">{{ name }}</dt>
+    {% for item in items %}
+        <dd>
+            {% if item.selected %}
+                 <strong>{{ item.name }}</strong>
+            {% else %}
+                {% if item.disabled %}
+                    <input type="checkbox" name="{{ item.name }}" disabled />
+                    {{ item.name }}
+                {% else %}
+                    <a href="{{ item.select_url }}" class="link">{{ item.name }}</a>
+                {% endif %}
+            {% endif %}
+    {% endfor %}
+</dl>

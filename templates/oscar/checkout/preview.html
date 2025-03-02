@@ -1,0 +1,27 @@
+{% extends 'oscar/checkout/preview.html' %}
+{% load currency_filters %}
+
+{% block payment_method %}
+<div class="span6">
+	<div class="sub-header">
+		<h2>Paiement</h2>
+	</div>
+	
+</div>
+{% endblock %}
+
+{% block place_order %}
+<h3>Passez en revue les informations ci-dessous, puis cliquez sur "Passer la commande".</h3>
+<form method="post" action="{% url 'checkout:preview' %}">
+	{% csrf_token %}
+
+	<div style="display:none">
+		<input type="hidden" name="action" value="place_order" />
+		{{ stripe_token_form.as_p }}
+	</div>
+
+    <div class="form-actions">
+        <button id='place-order' type="submit" value="Place order" data-loading-text="Placing order..." class="pull-right btn btn-primary btn-large">Place order</button>
+    </div>
+</form>
+{% endblock place_order %}

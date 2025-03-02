@@ -1,0 +1,41 @@
+// 
+// Projects
+// 
+
+.projects-section {
+    padding: 2rem;
+    p {
+        font-family: "Helvetica Neue";
+        text-align: justify;
+        font-weight: 300;
+        font-size: smaller;
+    }
+
+    .featured-text {
+        padding: 2rem;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 2 0 2rem;
+            border-left: 0.5rem solid $primary;
+        }
+        
+    }
+    .featured-text-right {
+        padding: 2rem;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 2 0 2rem;
+            border-right: 0.5rem solid $primary;
+        }
+        
+    }
+    .project-text {
+        padding: 3rem;
+        font-size: 90%;
+
+        @include media-breakpoint-up(lg) {
+            padding: 5rem;
+        }
+    }
+}
+

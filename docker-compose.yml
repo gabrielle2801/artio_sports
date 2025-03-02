@@ -1,0 +1,22 @@
+services:
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    container_name: mariadb-compose
+    environment:
+      - MYSQL_ROOT_PASSWORD=xavgab2122MDB
+      - MYSQL_DATABASE=artio_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=xavgab2122MDB
+    ports:
+      - "3308:3306"
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mariadb
