@@ -116,10 +116,4 @@ function mutedAndUnmuted () {
       rescaleCaptcha();
       $( window ).resize(function() { rescaleCaptcha(); });
     
-<<<<<<< HEAD
     });
-=======
-    });
-
-   
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
