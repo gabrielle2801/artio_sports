@@ -9,11 +9,7 @@
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
-=======
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -85,11 +81,7 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-<<<<<<< HEAD
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-=======
   --bs-font-sans-serif: "Helvetica Neue", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: "Helvetica Neue", BlinkMacSystemFont, "Segoe UI", Roboto, "Nunito", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -2098,10 +2090,7 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
-<<<<<<< HEAD
-=======
   color: #bdc3c7;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 
 .col-form-label {
@@ -2967,11 +2956,7 @@ textarea.form-control-lg {
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
-<<<<<<< HEAD
-  --bs-btn-color: var(--bs-body-color);
-=======
   --bs-btn-color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   --bs-btn-bg: transparent;
   --bs-btn-border-width: var(--bs-border-width);
   --bs-btn-border-color: transparent;
@@ -2989,20 +2974,13 @@ textarea.form-control-lg {
   color: var(--bs-btn-color);
   text-align: center;
   text-decoration: none;
-<<<<<<< HEAD
-=======
   text-transform: lowercase;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   vertical-align: middle;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
-<<<<<<< HEAD
-  border-radius: var(--bs-btn-border-radius);
-=======
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   background-color: var(--bs-btn-bg);
   box-shadow: var(--bs-btn-box-shadow);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -20474,13 +20452,10 @@ body {
   letter-spacing: 0.0625em;
 }
 
-<<<<<<< HEAD
-=======
 .navbar-light .navbar-nav .nav-link {
   color: #252525;
 }
 
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 #mainNav {
   min-height: 3.5rem;
   background-color: #fff;
@@ -20555,17 +20530,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
-.btn {
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  font-family: "Helvetica Neue", BlinkMacSystemFont, "Segoe UI", Roboto, "Varela Round", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 80%;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  border: 0;
-  margin-bottom: 10px;
-=======
 .nav {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
@@ -20730,7 +20694,6 @@ body {
   font-weight: 500 !important;
   text-decoration: none !important;
   text-transform: lowercase;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 
 .background-video {
@@ -20765,8 +20728,6 @@ body {
     font-size: 3em;
   }
 }
-<<<<<<< HEAD
-=======
 :root {
   /* Colors */
   --brand-color: #282d32;
@@ -20943,7 +20904,6 @@ h2, .h2 {
   background-color: #45b39d !important;
 }
 
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 .masthead {
   position: relative;
   width: 100%;
@@ -20966,8 +20926,6 @@ h2, .h2 {
   -webkit-background-clip: text;
           background-clip: text;
 }
-<<<<<<< HEAD
-=======
 .masthead #text {
   position: absolute;
   top: 50%;
@@ -20982,7 +20940,6 @@ h2, .h2 {
           background-clip: text;
   text-align: center;
 }
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 .masthead h2, .masthead .h2 {
   font-family: "Helvetica Neue";
   max-width: 20rem;
@@ -21050,8 +21007,6 @@ h2, .h2 {
   }
 }
 
-<<<<<<< HEAD
-=======
 .masthead_joutes {
   position: relative;
   width: 100%;
@@ -21119,7 +21074,6 @@ h2, .h2 {
   margin-bottom: 50px;
 }
 
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 .about-section {
   background: white;
   padding: 2px;
@@ -21140,15 +21094,9 @@ h2, .h2 {
 }
 .about-section p {
   font-family: "Helvetica Neue";
-<<<<<<< HEAD
-  text-align: justify;
-  font-weight: 300;
-  font-size: larger;
-=======
   text-align: justify !important;
   font-weight: 300;
   font-size: smaller;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 .about-section h2, .about-section .h2 {
   font-family: "Helvetica Neue";
@@ -21165,25 +21113,18 @@ h2, .h2 {
 .projects-section {
   padding: 2rem;
 }
-<<<<<<< HEAD
-=======
 .projects-section p {
   font-family: "Helvetica Neue";
   text-align: justify;
   font-weight: 300;
   font-size: smaller;
 }
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 .projects-section .featured-text {
   padding: 2rem;
 }
 @media (min-width: 992px) {
   .projects-section .featured-text {
-<<<<<<< HEAD
-    padding: 0 0 0 2rem;
-=======
     padding: 0 2 0 2rem;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
     border-left: 0.5rem solid #305F65;
   }
 }
@@ -21192,11 +21133,7 @@ h2, .h2 {
 }
 @media (min-width: 992px) {
   .projects-section .featured-text-right {
-<<<<<<< HEAD
-    padding: 0 0 0 2rem;
-=======
     padding: 0 2 0 2rem;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
     border-right: 0.5rem solid #305F65;
   }
 }
@@ -21235,8 +21172,6 @@ h2, .h2 {
 .contact-section .card {
   border: 0;
   border-bottom: 0.25rem solid #305F65;
-<<<<<<< HEAD
-=======
   display: grid;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -21247,7 +21182,6 @@ h2, .h2 {
   max-width: 21.875rem;
   overflow: hidden;
   border-radius: 0.625rem;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 .contact-section .card h4, .contact-section .card .h4 {
   font-size: 0.8rem;
@@ -21338,15 +21272,6 @@ button:focus {
   outline-width: 0;
 }
 
-<<<<<<< HEAD
-input, label {
-  display: block;
-  float: left;
-}
-
-*, body {
-  font-family: "Poppins", sans-serif;
-=======
 input {
   display: block;
   float: left;
@@ -21355,21 +21280,14 @@ input {
 
 *, body {
   font-family: "Helvetica", sans-serif;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
 }
 
-<<<<<<< HEAD
-html, body {
-  height: 100%;
-  background-color: #152733;
-=======
 .section {
   height: 100%;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 
 .form-holder {
@@ -21381,10 +21299,7 @@ html, body {
 }
 
 .form-holder .form-content {
-<<<<<<< HEAD
-=======
   background-color: #152733;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   position: relative;
   text-align: center;
   display: flex;
@@ -21393,11 +21308,7 @@ html, body {
 }
 
 .form-content .form-items {
-<<<<<<< HEAD
-  border: 3px solid #fff;
-=======
   border: 3px solid #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   padding: 40px;
   display: inline-block;
   width: 100%;
@@ -21408,11 +21319,7 @@ html, body {
 }
 
 .form-content h3, .form-content .h3 {
-<<<<<<< HEAD
-  color: #fff;
-=======
   color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -21424,11 +21331,7 @@ html, body {
 }
 
 .form-content p {
-<<<<<<< HEAD
-  color: #fff;
-=======
   color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -21437,56 +21340,33 @@ html, body {
 }
 
 .form-content label, .was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .form-check-input:valid ~ .form-check-label {
-<<<<<<< HEAD
-  color: #fff;
-=======
   color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 
 .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
   width: 100%;
-<<<<<<< HEAD
-=======
   box-sizing: border-box;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   padding: 9px 20px;
   text-align: left;
   border: 0;
   outline: 0;
-<<<<<<< HEAD
-  border-radius: 6px;
-  background-color: #fff;
-  font-size: 15px;
-  font-weight: 300;
-  color: #8D8D8D;
-=======
   border-style: solid;
   border-width: 1px;
   font-size: 15px;
   font-weight: 300;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   transition: all 0.3s ease;
   margin-bottom: 16px;
 }
 
 .btn-primary {
-<<<<<<< HEAD
-  background-color: #6C757D;
-=======
   background-color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   outline: none;
   border: 0px;
   box-shadow: none;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-<<<<<<< HEAD
-  background-color: #495056;
-=======
   background-color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   outline: none !important;
   border: none !important;
   box-shadow: none;
@@ -21499,19 +21379,11 @@ html, body {
   border-radius: 6px;
   text-align: left;
   background-color: #fff;
-<<<<<<< HEAD
-  border: 0;
-  font-size: 15px;
-  font-weight: 300;
-  color: #8D8D8D;
-  outline: none;
-=======
   border: solid 1px #252525 !important;
   font-size: 15px;
   font-weight: 300;
   color: #252525;
   outline-color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
   resize: none;
   height: 120px;
   transition: none;
@@ -21521,11 +21393,7 @@ html, body {
 .form-content textarea:hover, .form-content textarea:focus {
   border: 0;
   background-color: #ebeff8;
-<<<<<<< HEAD
-  color: #8D8D8D;
-=======
   color: #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 
 .mv-up {
@@ -21591,11 +21459,7 @@ html, body {
     min-width: 240px;
   }
   .form-content .form-items {
-<<<<<<< HEAD
-    border: 3px solid #fff;
-=======
     border: 3px solid #252525;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
     padding: 40px;
     display: inline-block;
     width: 100%;
@@ -21613,10 +21477,7 @@ html, body {
   color: #f0f9ff;
   background-color: #282d32;
   bottom: 0px;
-<<<<<<< HEAD
-=======
   margin-top: 25px;
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 }
 
 .footer-dark h3, .footer-dark .h3 {

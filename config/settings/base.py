@@ -13,11 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import environ
-<<<<<<< HEAD
-
-=======
 from oscar.defaults import * # noqa
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 # from config import env
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,10 +28,7 @@ env.read_env(os.path.join(BASE_DIR, '.env'))
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-=======
     'haystack',
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -72,10 +65,6 @@ INSTALLED_APPS = [
     "artio.contact",
     "artio.standardpages",
     "artio.base",
-<<<<<<< HEAD
-]
-
-=======
     "artio.products",
     'django.contrib.sites',
     'django.contrib.flatpages',
@@ -120,7 +109,6 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -131,11 +119,8 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-<<<<<<< HEAD
-=======
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -145,10 +130,7 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             os.path.join(PROJECT_DIR, "templates"),
-<<<<<<< HEAD
-=======
             os.path.join(BASE_DIR, "templates"),
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -159,13 +141,10 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 # Add this to register the _settings_ context processor:
                 "wagtail.contrib.settings.context_processors.settings",
-<<<<<<< HEAD
-=======
                 'oscar.apps.search.context_processors.search_form',
                 'oscar.apps.checkout.context_processors.checkout',
                 'oscar.apps.communication.notifications.context_processors.notifications',
                 'oscar.core.context_processors.metadata',
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
             ],
         },
     },
@@ -224,15 +203,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-<<<<<<< HEAD
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
-
-USE_I18N = True
-
-USE_TZ = True
-=======
 LANGUAGE_CODE = "fr"
 
 TIME_ZONE = "Europe/Paris"
@@ -240,7 +210,6 @@ TIME_ZONE = "Europe/Paris"
 USE_I18N = True
 
 USE_TZ = False
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
 
 
 # Static files (CSS, JavaScript, Images)
@@ -314,12 +283,6 @@ DJANGO_VITE_DEV_MODE = True
 # Recaptcha set
 RECAPTCHA_PUBLIC_KEY = os.getenv("RECAPTCHA_SITE_KEY")
 RECAPTCHA_PRIVATE_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
-<<<<<<< HEAD
-NOCAPTCHA = True
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
-CRISPY_TEMPLATE_PACK = "bootstrap5"
-=======
 
 NOCAPTCHA = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -376,4 +339,3 @@ STRIPE_PAYMENT_SUCCESS_URL = "{0}{1}".format(
     STRIPE_RETURN_URL_BASE, "/boutique/checkout/preview-stripe/{0}/")
 STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(
     STRIPE_RETURN_URL_BASE, "/boutique/checkout/stripe-payment-cancel/{0}/")
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd

@@ -37,12 +37,8 @@
     },
     "dependencies": {
         "bootstrap": "^5.3.3",
-<<<<<<< HEAD
-        "bootstrap-icons": "^1.11.3"
-=======
         "bootstrap-icons": "^1.11.3",
         "startbootstrap-shop-homepage": "^5.0.6"
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
     },
     "devDependencies": {
         "autoprefixer": "10.4.14",
