@@ -1,8 +1,12 @@
 import os
 from .base import *
-from .base import env
+
 # from config import env
 
+import environ
+
+env = environ.Env()
+env.read_env()
 DEBUG = False
 SECRET_KEY = env("SECRET_KEY")
 # Security configuration
