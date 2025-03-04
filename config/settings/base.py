@@ -341,3 +341,4 @@ STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(
     STRIPE_RETURN_URL_BASE, "/boutique/checkout/stripe-payment-cancel/{0}/")
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+OSCAR_ALLOW_ANON_CHECKOUT = True
