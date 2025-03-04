@@ -339,3 +339,5 @@ STRIPE_PAYMENT_SUCCESS_URL = "{0}{1}".format(
     STRIPE_RETURN_URL_BASE, "/boutique/checkout/preview-stripe/{0}/")
 STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(
     STRIPE_RETURN_URL_BASE, "/boutique/checkout/stripe-payment-cancel/{0}/")
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
