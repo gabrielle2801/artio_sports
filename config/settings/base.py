@@ -107,7 +107,7 @@ INSTALLED_APPS = [
     'django_tables2',
 ]
 
-SITE_ID = 1
+SITE_ID = 3
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -271,7 +271,7 @@ EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = 'contact@artio-sports.com'
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://example.com"
+WAGTAILADMIN_BASE_URL = "https://artio-sports.com/"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk

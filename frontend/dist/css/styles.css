@@ -20452,6 +20452,12 @@ body {
   letter-spacing: 0.0625em;
 }
 
+a {
+  color: #282d32;
+  text-decoration: none !important;
+  font-size: medium;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: #252525;
 }
@@ -20795,17 +20801,37 @@ h2, .h2 {
 
 /* CARD COMPONENT */
 .card {
-  padding: 0px 0px !important;
-  margin-left: 20px;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  border: none !important;
-  display: grid;
-  place-items: center;
-  width: 80vw;
-  max-width: 21.875rem;
-  overflow: hidden;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: var(--bs-body-bg);
+  background-clip: border-box;
+  border: var(--bs-border-width) solid var(--bs-border-color-translucent);
+  border-radius: var(--bs-border-radius);
+}
+.card > hr {
+  margin-right: 0;
+  margin-left: 0;
+}
+.card > .list-group {
+  border-top: inherit;
+  border-bottom: inherit;
+}
+.card > .list-group:first-child {
+  border-top-width: 0;
+  border-top-left-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  border-top-right-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+}
+.card > .list-group:last-child {
+  border-bottom-width: 0;
+  border-bottom-right-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  border-bottom-left-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+}
+.card > .card-header + .list-group,
+.card > .list-group + .card-footer {
+  border-top: 0;
 }
 
 .card__background {
@@ -21168,32 +21194,6 @@ h2, .h2 {
 
 .contact-section {
   padding-top: 5rem;
-}
-.contact-section .card {
-  border: 0;
-  border-bottom: 0.25rem solid #305F65;
-  display: grid;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  border: none !important;
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
-  display: grid;
-  place-items: center;
-  max-width: 21.875rem;
-  overflow: hidden;
-  border-radius: 0.625rem;
-}
-.contact-section .card h4, .contact-section .card .h4 {
-  font-size: 0.8rem;
-  font-family: "Helvetica Neue", BlinkMacSystemFont, "Segoe UI", Roboto, "Varela Round", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-}
-.contact-section .card hr {
-  opacity: 1;
-  border-color: #305F65;
-  border-width: 0.25rem;
-  width: 3rem;
 }
 .contact-section .social {
   margin-top: 5rem;

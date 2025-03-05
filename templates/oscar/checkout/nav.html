@@ -2,7 +2,7 @@
 {% load static %}
 
 <nav id="top_page"  class="navbar navbar-static-top nav-checkout navbar-expand-md navbar-dark bg-dark">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-md-auto d-md-flex">
     {% spaceless %}
         <li class="nav-item step1 {% if step == 1 %}  active{% else %}{% if step == 2 %}previous{% else %}{% if step > 1 %}visited{% else %}disabled{% endif %}{% endif %}{% endif %} ">
             {% if step == 2 or step == 3 or step == 4 or step == 5%}

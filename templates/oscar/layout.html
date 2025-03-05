@@ -18,9 +18,11 @@
         <div class="page_inner">
             <div class="row justify-content-between">
                 <img class="img-fluid img_header" id="img_header" src="{% static 'src/assets/img/250210_Fond_joutes.png' %}" alt="..." />
-                
             </div>
         </div>
+        {% block navigation %}
+        {% include "oscar/partials/nav_primary.html" %}
+    {% endblock %}
     </header>
     {# Main content of page - other layout templates may override this block #}
     {% block content_wrapper %}
@@ -57,13 +59,19 @@
     {% include "includes/footer.html" %}
     {% endblock %}
 
-{# Local scripts #}
-
-
-{% block extrascripts %}
-    {% include "oscar/partials/extrascripts.html" %}
-    {{ block.super }}
-{% endblock %}
+    {# Local scripts #}
+    {% block scripts %}
+        {{ block.super }}
+        <!-- Twitter Bootstrap -->
+        <script src="{% static "oscar/js/bootstrap4/bootstrap.bundle.min.js" %}"></script>
+        <!-- Oscar -->
+        <script src="{% static "oscar/js/oscar/ui.js" %}"></script>
+    {% endblock %}
+    
+    {% block extrascripts %}
+        {% include "oscar/partials/extrascripts.html" %}
+        {{ block.super }}
+    {% endblock %}
 
 {% block onbodyload %}
     {{ block.super }}

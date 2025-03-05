@@ -1,4 +1,5 @@
 {% load widget_tweaks %}
+
 {% if field.is_hidden %}
     {{ field }}
 {% else %}
@@ -9,6 +10,7 @@
 
     {% block control_group %}
         <div class="form-group">
+         
             {% block label %}
                 {% if not nolabel and field.widget_type != 'checkbox'  %}
                     {% if "Variante" in field.label|safe %}

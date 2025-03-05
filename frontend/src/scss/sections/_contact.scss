@@ -6,36 +6,7 @@
     padding-top: 5rem;
     
 
-    .card {
-        border: 0;
-        border-bottom: 0.25rem solid $primary;
-        display: grid;
-        margin-top: 60px;
-        margin-bottom: 60px;
-        border: none !important;
-        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
-        display: grid;
-        place-items: center;
-        max-width: 21.875rem;
-        overflow: hidden;
-        border-radius: 0.625rem;
-
-
-        h4 {
-            font-size: 0.8rem;
-            font-family: $font-family-special;
-            text-transform: uppercase;
-            letter-spacing: 0.15rem;
-        }
-
-        hr {
-            opacity: 1;
-            border-color: $primary;
-            border-width: 0.25rem;
-            width: 3rem;
-        }
-    }
-
+    
     .social {
         margin-top: 5rem;
 
