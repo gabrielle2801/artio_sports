@@ -21,9 +21,9 @@
             {% purchase_info_for_product request product as session %}
             {% if session.price.exists %}
             <div class="col-sm-6 price_color text-right">
-                <p style="text-align:right; font-weight: 250;margin: 1px;" >{{ session.price.incl_tax|currency:session.price.currency }}</p>
+                
                 {% endif %}
-                    {% include "oscar/catalogue/partials/add_to_basket_form_compact.html" %}
+                 
                {% endblock %}
             </div>
             </div> 

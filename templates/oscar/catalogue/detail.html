@@ -73,7 +73,6 @@
             {% purchase_info_for_product request product as session %}
             {% if session.price.exists %}
             <div class="col-sm-6 price_color text-right">
-                <p style="text-align:right; font-weight: 250;" >{{ session.price.incl_tax|currency:session.price.currency }}</p>
             </div>
             {% endif %}
             </div>
@@ -88,7 +87,7 @@
             <hr/>
             {% if  product.is_parent %}
                 {% block product_basket_form %}
-                    {% include "oscar/catalogue/partials/add_to_basket_form.html" %}
+                   
                 {% endblock %}
             {% else %}
                 {% block variants %}
