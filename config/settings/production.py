@@ -9,6 +9,7 @@ env = environ.Env()
 env.read_env()
 DEBUG = False
 SECRET_KEY = env("SECRET_KEY")
+SITE_ID = 2
 # Security configuration
 
 # Ensure that the session cookie is only sent by browsers under an HTTPS connection.

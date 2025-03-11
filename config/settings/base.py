@@ -107,7 +107,7 @@ INSTALLED_APPS = [
     'django_tables2',
 ]
 
-SITE_ID = 3
+
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",

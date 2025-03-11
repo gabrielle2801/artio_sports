@@ -1,0 +1,3 @@
+{% extends "oscar/communication/emails/base.txt" %}
+{% load i18n %}
+{% trans 'Thank you for registering.' %}
