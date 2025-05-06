@@ -1,6 +1,5 @@
 {% extends "base.html" %}
-{% load static %}   
-{% load wagtailcore_tags %}
+
 {% load static wagtailcore_tags  wagtailimages_tags %}
 
 
@@ -21,11 +20,121 @@
             </p>
         </div>
     </div>
-    
-    <div class="row gx-4 gx-lg-5 justify-content-end">
-        
-    </div>
-   
+    <hr />
+ 
+    <section class="about-section text-center" id="about">
+        <div class="row gx-4 gx-lg-5 justify-content-end">
+            <div class="col align-items-center">
+                <h4 style="font-weight: 500;">
+                    Sweatshirt Capuche <br> édition Joutes
+                </h4>
+               
+                <h5 style="font-family: 'Brittany Signature', sans-serif;content: ''; width: 3em; border-bottom: solid;display: inline-block;margin-right: 3em;">l'essentiel </h5>
+                <p>
+                    Découvrez notre sweatshirt à capuche sport en coton, conçu pour allier style, confort et performance. Que vous soyez en plein entraînement, en sortie décontractée ou en mode détente, ce sweat deviendra votre allié incontournable.
+                    Il offre une douceur incomparable et une respirabilité optimale, permettant de réguler la température corporelle même lors d’efforts intenses. Sa coupe ergonomique garantit une liberté de mouvement totale, idéale pour vos séances de sport ou vos activités quotidiennes.
+                </p>
+            </div>
+            <div class="col-lg-8">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_images.all %}
+                        {% image loop_cycle.image fill-900x500 as img %}
+                        <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                            <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                        </div>
+                    {% endfor %}
+                        
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right"  style="color: black;  font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+    </section>
+    <hr/>
+    <section class="about-section text-center" id="about">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div>
+                <h4 style="font-family: 'Brittany Signature', sans-serif;content: '';display: inline-block;margin-right: 3em;font-weight: 500;font-size: 2em;">
+                    Les Joutes Sétoises - Le Catalogue -
+                </h4>    
+            </div>
+           
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_setoise_part1.all %}
+                        {% image loop_cycle.image fill-900x500 as catalogue %}
+                        <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                            <img src="{{ catalogue.url }}" class="img-fluid" alt="{{ catalogue.alt }}">
+                        </div>
+                    {% endfor %}
+                        
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+               
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-6 align-items-center">
+                        <div id="carousel2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for loop_cycle in self.gallery_setoise_part2.all %}
+                                {% image loop_cycle.image fill-900x500 as catalogue2 %}
+                                <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                                    <img src="{{ catalogue2.url }}" class="img-fluid" alt="{{ catalogue2.alt }}">
+                                </div>
+                            {% endfor %}
+                                
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                                <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                                <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                                <span class="visually-hidden">Next</span>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="col-6 align-items-center">
+                        <div id="carousel3" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for loop_cycle in self.gallery_setoise_part3.all %}
+                                {% image loop_cycle.image fill-900x500 as catalogue3 %}
+                                <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+                                    <img src="{{ catalogue3.url }}" class="img-fluid" alt="{{ catalogue3.alt }}">
+                                </div>
+                            {% endfor %}
+                                
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                                <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                                <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                                <span class="visually-hidden">Next</span>
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                    
+                   
+                    
+    </section>
+   <hr/>
 </div>
 </section>
 <!-- Projects-->

@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-__pycache__
-*.pyc
-.DS_Store
-*.swp
-.env
-.env.production
-*.sqlite3
-/venv/
-/.venv/
-/tmp/
-/static/
-/.vagrant/
-/Vagrantfile.local
-node_modules/
-/npm-debug.log
-/.idea/
-.vscode
-coverage
-.python-version
-.vim
-=======
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
@@ -198,4 +176,3 @@ node_modules
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
->>>>>>> 3a2d8aa8c1b0f4975ce54c17064465ab66e104bd
