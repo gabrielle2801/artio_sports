@@ -45,7 +45,23 @@
                                 <i class="far fa-user mr-2"></i>
                                 {% trans "Account" %}
                             </a>
-                            
+                            <li class="nav-item mr-2">
+                                <a id="basket_link" href="{% url 'basket:summary'%}" class="nav-link">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    
+                                </a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a id="basket_link" href="{% url 'basket:summary'%}" class="nav-link">
+                                    <strong>{% trans "Basket total:" %}</strong>
+                                    {% if request.basket.is_tax_known %}
+                                        {{ request.basket.total_incl_tax|currency:request.basket.currency }}
+                                    {% else %}
+                                        {{ request.basket.total_excl_tax|currency:request.basket.currency }}
+                                    {% endif %}
+                                </a>
+                                
+                            </li>
 
                         {% endif %}
                     </li>
@@ -70,8 +86,21 @@
                             <i class="fas fa-sign-in-alt mr-2"></i>
                             {% trans "Login or register" %}
                         </a>
-                        
-                        
+                        <li class="nav-item mr-2">
+                            <a id="basket_link" href="{% url 'basket:summary'%}" class="nav-link">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a id="basket_link" href="{% url 'basket:summary'%}" class="nav-link">
+                                <strong>{% trans "Basket total:" %}</strong>
+                                {% if request.basket.is_tax_known %}
+                                    {{ request.basket.total_incl_tax|currency:request.basket.currency }}
+                                {% else %}
+                                    {{ request.basket.total_excl_tax|currency:request.basket.currency }}
+                                {% endif %}
+                            </a>
+                    </li>
                 {% endif %}
             </ul>
         </div>
