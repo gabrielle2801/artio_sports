@@ -17,6 +17,10 @@ from oscar.defaults import * # noqa
 # from config import env
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOCALE_PATHS = (
+    os.path.join(PROJECT_DIR, '../locale'),
+
+)
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
@@ -139,6 +143,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+              
                 # Add this to register the _settings_ context processor:
                 "wagtail.contrib.settings.context_processors.settings",
                 'oscar.apps.search.context_processors.search_form',
@@ -204,6 +209,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 LANGUAGE_CODE = "fr"
+
+LANGUAGES = [
+    ('fr', 'FRENCH'),
+]
 
 TIME_ZONE = "Europe/Paris"
 
