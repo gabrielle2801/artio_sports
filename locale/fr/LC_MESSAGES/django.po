@@ -623,6 +623,11 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+msgid "Being processed"
+msgstr "En cours de traitement"
+msgid "Processed"
+msgstr "Traité"
+
 #: templates/oscar/customer/order/order_detail.html:23
 msgid "Product"
 msgstr ""
