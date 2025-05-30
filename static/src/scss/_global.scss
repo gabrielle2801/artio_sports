@@ -14,3 +14,9 @@ html {
 body {
     letter-spacing: $base-letter-spacing;
 }
+
+a {
+    color: #282d32;
+    text-decoration: none !important;
+    font-size: medium;
+}
