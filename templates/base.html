@@ -9,6 +9,7 @@
             <meta name="author" content="" />
             <title>Artio Sports</title>
             <meta name="p:domain_verify" content="a4786271b1a6505358fde98ce737e2c2"/>
+
             <link rel="icon" type="image/png" href="../media/original_images/favicon-96x96.png" sizes="180x180">
 
             <!-- Font Awesome icons (free version)-->
@@ -61,24 +62,21 @@
         <!-- Masthead-->
         {% block header %}
         <!-- Masthead-->
-        <header class="masthead">  
+        <header class="masthead" >  
             <div class="d-flex justify-content-center">  
-                <video  class="img-fluid background-video" id="background-video" autoplay loop muted 
-                source src="{% static '../media/original_videos/ARTIO VIDEO DEF(1).mp4' %}">  
+                <video  class="background-video" id="background-video"  autoplay loop muted playsinline poster="{% static 'src/assets/img/poster.jpg' %}"
+                source src="{% static '../media/original_videos/JOUTES.mp4' %}">  
                 </video>
+                <div class="overlay">                      
+                        <img class="img-fluid" src="{% static '../media/original_images/241114_ARTIO.png' %}" width="315" height="420" alt="..." />
+                        <h3 class="text-white-100 mx-auto mt-2 mb-5">Fournisseur officiel des joutes sétoises</h3>
+                        <a class="btn-white"  href="{%  url 'catalogue:index' %}">Découvrir nos produits</a>
+                    </div>
             </div>
             <div class=" d-flex align-items-center justify-content-end ">
                 <i  id="icon" class="bi bi-volume-mute" onclick="mutedAndUnmuted ()"></i>
             </div> 
-            <div class="d-flex justify-content-center">
-                <img class="img-fluid" src="{% static '../media/original_images/greatness-blanc.png' %}" width="315" height="420" alt="..." />
-            </div> 
-            <div class="container px-4 px-lg-5 d-flex h-25 align-items-center justify-content-center">          
-                <div class="d-flex justify-content-center">           
-                    <div class="text-center">                      
-                        <img class="img-fluid" src="{% static '../media/original_images/241114_ARTIO.png' %}" width="315" height="420" alt="..." />
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Equipementier Sportif et Français</h2>
-                        <a class="btn btn-primary" href="#about">C'est Parti !</a>
+            
                     </div>
                
                 </div>

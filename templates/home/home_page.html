@@ -5,23 +5,10 @@
 
 {% block content %}
 <!-- About-->
+ 
 <section class="about-section text-center" id="about">
 <div class="container px-4 px-lg-5">
-    <div class="row">
-        <div class="col-lg-6">
-            <img class="img-fluid"  src="{% static 'src/assets/img/fond-texte.png' %}">
-            <img class="img-fluid" src="{% static 'src/assets/img/Laoutoutcommence.png' %}" width="315" height="420" alt="..." />
-        </div>
-        <div class="col-lg-6">
-            <h2 class="text-black-50 mx-auto mt-2 mb-5">Equipementier Sportif et Français</h2>
-            <img class="img-fluid"  src="{% static 'src/assets/img/241122_drapeau.png' %}"  width="115" height="220" />
-            <p class="text-white-50 text-right ">
-                {{ page.body|richtext }}                
-            </p>
-        </div>
-    </div>
-    <hr />
-  <section class="about-section text-center" id="about">
+    <section class="about-section text-center" id="about">
     <div class="row gx-4 gx-lg-5 justify-content-end">
         <div class="col align-items-center">
             <h4 style="font-weight: 500;">
@@ -36,13 +23,28 @@
                 <strong>Chez artio</strong> nous allions savoir-faire et innovation pour offrir aux jouteurs et passionnés un matériel performant et authentique. De la tenue blanche traditionnelle à la marinière iconique nous offrons des tenues conformes aux exigences de la discipline, nous vous accompagnons dans votre quête de victoire !
             </p>
         </div>
-        <div class="col align-items-center">
+        <div class="col-lg-6">
             <img class="img-fluid" src="{% static 'src/assets/img/Flyers.png' %}" width="315" height="420" alt="..." />
 
         </div>
     </div>
     <hr />
   </section>
+    <div class="row">
+        <div class="col-lg-6">
+            <img class="img-fluid"  src="{% static 'src/assets/img/fond-texte.png' %}">
+            <img class="img-fluid" src="{% static 'src/assets/img/Laoutoutcommence.png' %}" width="315" height="420" alt="..." />
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-black-50 mx-auto mt-2 mb-5">Equipementier Sportif et Français</h2>
+            <img class="img-fluid"  src="{% static 'src/assets/img/241122_drapeau.png' %}"  width="115" height="220" />
+            <p class="text-white-50 text-right ">
+                {{ page.body|richtext }}                
+            </p>
+        </div>
+    </div>
+    <hr />
+  
     <section class="about-section text-center" id="about">
         <div class="row gx-4 gx-lg-5 justify-content-end">
             <div class="col align-items-center">
