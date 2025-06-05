@@ -20,6 +20,24 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- Pinterest Tag -->
+        <script>
+            pintrk('track', 'checkout', {
+            event_id: 'eventId0001',
+            value: 100,
+            order_quantity: 1,
+            currency: 'USD'
+            });
+        </script>
+        <script>
+            pintrk('track', 'addtocart', {
+            event_id: 'eventId0001',
+            value: 100,
+            order_quantity: 1,
+            currency: 'USD'
+            });
+        </script>
+        <!-- end Pinterest Tag -->
         
         {% block favicon %}
         <link rel="icon" type="image/png" href="{% static '../media/original_images/favicon-96x96.png' %}" sizes="96x96">
