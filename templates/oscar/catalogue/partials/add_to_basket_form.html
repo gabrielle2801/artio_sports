@@ -10,8 +10,18 @@
     <form id="add_to_basket_form" action="{% url 'basket:add' pk=product.pk  %}" method="post"  class="add-to-basket mb-0">
         {% csrf_token %}
         {% include "oscar/partials/form_fields.html" with form=basket_form %}
-        <button type="submit" class="btn btn-lg btn-primary w-100" value="{% trans "Add to basket" %}" data-loading-text="{% trans 'Adding...' %}">{% trans "Add to basket" %}</button>
-    </form>
+            <button type="submit"
+                class="btn btn-lg btn-primary w-100"
+                onclick="pintrk('track', 'addtocart', {
+                    value: {{ session.price.incl_tax|floatformat:2 }},
+                    currency: 'EUR',
+                    order_quantity: 1
+                });"
+                value="{% trans 'Add to basket' %}"
+                data-loading-text="{% trans 'Adding...' %}">
+            {% trans 'Add to basket' %}
+        </button>       
+     </form>
     {% iffeature "wishlists" %}
         {% include "oscar/catalogue/partials/add_to_wishlist.html" %}
     {% endiffeature %}

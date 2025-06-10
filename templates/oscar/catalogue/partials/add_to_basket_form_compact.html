@@ -10,8 +10,18 @@
     <form action="{% url 'basket:add' pk=product.pk %}" method="post">
         {% csrf_token %}
         {{ basket_form|crispy }}
-        <button class="submit" data-loading-text="{% trans 'Adding...' %}" id="submit-basket"><i class="fa-solid fa-bag-shopping"></i></button>
-    </form>
+        <button type="submit"
+                        class="btn btn-lg btn-primary w-100"
+                        onclick="pintrk('track', 'addtocart', {
+                            value: {{ session.price.incl_tax|floatformat:2 }},
+                            currency: 'EUR',
+                            order_quantity: 1
+                        });"
+                        value="{% trans 'Add to basket' %}"
+                        data-loading-text="{% trans 'Adding...' %}">
+                    {% trans 'Add to basket' %}
+        </button>    
+            </form>
 {% else %}
     <span class="btn btn-secondary btn-block disabled">{% trans "Add to basket" %}</span>
 {% endif %}

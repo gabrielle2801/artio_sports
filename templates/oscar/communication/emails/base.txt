@@ -1,4 +1,6 @@
 {% load i18n %}{% block header %}{% endblock %}{% block body %}{% endblock %}{% block footer %}
 
+{% blocktrans %}Hello {{ user.first_name }}{% endblocktrans %}
+
 {% trans "Thanks for using our site!" %}
 {% blocktrans with name=site.name %}The {{ name }} team{% endblocktrans %}{% endblock %}
