@@ -15,9 +15,13 @@
 
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header>
-        <div class="page_inner">
+        <div class="masthead">
             <div class="row justify-content-between">
                 <img class="img-fluid img_header" id="img_header" src="{% static 'src/assets/img/250210_Fond_joutes.png' %}" alt="..." />
+            </div>
+            <div class="special-offer-banner text-center ">
+                <p class="text-center "><b>🎉 Offre Spéciale sur toute la boutique jusqu'au 15 juin :</b></p> 
+                <p class="text-center "><b>livraison gratuite pour 2 articles achetés ! et la casquette offerte pour 3 articles achetés ! </b></p>
             </div>
         </div>
         {% block navigation %}
