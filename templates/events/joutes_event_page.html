@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags  wagtailimages_tags %}
+
+{% block header %}
+<header class="masthead" >
+    <div class="d-flex justify-content-center"> 
+        <video  class="background-video" style="max-width: 400px; width: 100%; height: auto;" id="background-video"  autoplay loop muted playsinline poster="{% static 'src/assets/img/poster.jpg' %}"
+                source src="{% static '../media/original_videos/JOUTEURS.mp4' %}">  
+        </video>
+         <video  class="background-video" style="max-width: 400px; width: 100%; height: auto;" id="background-video"  autoplay loop muted playsinline poster="{% static 'src/assets/img/poster.jpg' %}"
+                source src="{% static '../media/original_videos/PINT.mp4' %}">  
+        </video>
+        <video  class="background-video" style="max-width: 400px; width: 100%; height: auto;" id="background-video"  autoplay loop muted playsinline poster="{% static 'src/assets/img/poster.jpg' %}"
+                source src="{% static '../media/original_videos/MARIN.mp4' %}">  
+        </video>
+     </div>
+     <div class="overlay">
+        <div class="special-offer-banner">
+             <h2>{{ page.header_title|default:page.title }}</h2>
+            <p>Les Joutes Sétoises 2025 : Tradition, Passion et Sport avec Artio Sports</p>
+        </div>
+    </div>
+</header>
+{% endblock %}
+    {% block content %}
+<article class="joutes-page">
+
+<div class="container px-4 px-lg-5">
+    <section class="about-section text-center" id="about">
+    <div class="row gx-4 gx-lg-5 justify-content-end">
+        <div class="col align-items-center">
+            <h5 style="font-family: 'Brittany Signature', sans-serif;content: ''; width: 3em; border-bottom: solid;display: inline-block;margin-right: 3em;">L'évènement </h5>
+            <div class="intro">{{ page.intro|richtext }}</div>
+            {% if page.events_cta_link %}
+                        <a  href="{% pageurl page.events_cta_link %}" class="btn btn-primary" >
+                            {% firstof events.contact_cta page.events_cta_link.title %}
+                        </a>
+                    {% endif %}
+        </div>
+        <div class="col-lg-6">
+            <img class="img-fluid" src="{% static 'src/assets/img/Flyers.png' %}" width="315" height="420" alt="..." />
+
+        </div>
+    </div>
+    <hr />
+  </section>
+    <section class="about-section text-center" id="about">
+        <div class="row">
+             <div class="col-lg-6">
+                 {{ page.content }}
+            </div>
+             <div class="col-lg-6">
+            <video  class="product-video" style="max-width: 400px; width: 100%; height: auto;" id="product-video"  autoplay loop muted playsinline poster="{% static 'src/assets/img/poster.jpg' %}"
+                source src="{% static '../media/original_videos/CHEM.mp4' %}">  
+        </video>
+
+        </div>
+         
+        </div>
+       
+    </section>
+
+    <section class="faq">
+        <h2>FAQ - Joutes Sétoises 2025</h2>
+        {% for block in page.faq %}
+            <div class="faq-item">
+                <h3>{{ block.value.question_text }}</h3>
+                <p>{{ block.value.answer_text|richtext }}</p>
+            </div>
+        {% endfor %}
+    </section>
+    </div>
+</article>
+{% endblock %}
+
+

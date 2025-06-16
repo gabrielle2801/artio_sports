@@ -111,12 +111,29 @@ class HomePage(Page):
         verbose_name="Contact CTA link",
         help_text="contact Page"
     )
+    events_cta = models.CharField(
+        blank=True,
+        verbose_name="Events CTA",
+        max_length=255,
+        help_text='Events forms CTA',
+    )
+    events_cta_link = models.ForeignKey(
+        "wagtailcore.Page",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+        verbose_name="Events CTA link",
+        help_text="Events Page"
+    )
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
                 FieldPanel("contact_cta"),
                 FieldPanel("contact_cta_link"),
+                FieldPanel("events_cta"),
+                FieldPanel("events_cta_link"),
             ],
         ),
         FieldPanel('body'),

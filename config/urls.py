@@ -6,7 +6,15 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from django.apps import apps
 from artio.search import views as search_views
+from django.contrib.sitemaps.views import sitemap
+from django.views.decorators.cache import cache_page
+from sitemaps import ProductSitemap, CategorySitemap, PageSitemap
 
+sitemaps = {
+    'products': ProductSitemap,
+    'categories': CategorySitemap,
+    'pages': PageSitemap,
+}
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path("django-admin/", admin.site.urls),
@@ -34,6 +42,12 @@ urlpatterns = urlpatterns + [
     path("", include('artio.standardpages.urls')),
     path("", include('artio.products.urls')),
     path("", include(wagtail_urls)),
+    path(
+        'sitemap.xml',
+        cache_page(60 * 60 * 12)(sitemap),  # ici : 12 heures de cache
+        {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'
+    ),
     
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:

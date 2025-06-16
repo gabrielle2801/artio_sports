@@ -22,7 +22,15 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_TRACKING_ID }}"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
+            gtag('config', '{{ GA_TRACKING_ID }}');
+            </script>
             <link href="{% static 'dist/css/styles.css' %}" rel="stylesheet" />
             <!--<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">-->
             <!-- Pinterest Tag -->
@@ -89,7 +97,7 @@
                         <h3 class="text-white-100 mx-auto mt-2 mb-5">Fournisseur officiel des joutes sétoises</h3>
                         <a class="btn-white"  href="{%  url 'catalogue:index' %}">Découvrir nos produits</a>
                         <div class="special-offer-banner">
-                            <p class="text-center "><b>🎉 Offre Spéciale sur toute la boutique jusqu'au 15 juin :</b></p> 
+                            <p class="text-center "><b>🎉 Offre Spéciale sur toute la boutique une semaine ! Encore une semaine de plus ! </b></p> 
                 <p class="text-center "><b>livraison gratuite pour 2 articles achetés ! et la casquette de votre choix offerte pour 3 articles achetés ! </b></p>
                          </div>
                     </div>

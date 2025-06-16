@@ -22,6 +22,11 @@
                 Depuis des siècles, les Joutes Nautiques de Sète incarnent la force, l’adresse et la tradition.<br> Ce sport spectaculaire, symbole du patrimoine sétois, exige un équipement à la hauteur de ses défis.
                 <strong>Chez artio</strong> nous allions savoir-faire et innovation pour offrir aux jouteurs et passionnés un matériel performant et authentique. De la tenue blanche traditionnelle à la marinière iconique nous offrons des tenues conformes aux exigences de la discipline, nous vous accompagnons dans votre quête de victoire !
             </p>
+            {% if page.events_cta_link %}
+                        <a  href="{% pageurl page.events_cta_link %}" class="btn btn-primary" >
+                            {% firstof events.contact_cta page.events_cta_link.title %}
+                        </a>
+                    {% endif %}
         </div>
         <div class="col-lg-6">
             <img class="img-fluid" src="{% static 'src/assets/img/Flyers.png' %}" width="315" height="420" alt="..." />

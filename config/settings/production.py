@@ -1,8 +1,6 @@
 import os
 from .base import *
 
-# from config import env
-
 import environ
 
 env = environ.Env()
@@ -53,3 +51,5 @@ try:
     from .local import *
 except ImportError:
     pass
+
+GA_TRACKING_ID = env("GA_TRACKING_ID", "")

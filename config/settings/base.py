@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "wagtail.contrib.settings",
+    "django.contrib.sitemaps",
     "django_browser_reload",
     "wagtail_modeladmin",
     'django_vite',
@@ -70,6 +71,7 @@ INSTALLED_APPS = [
     "artio.standardpages",
     "artio.base",
     "artio.products",
+    "artio.events",
     'django.contrib.sites',
     'django.contrib.flatpages',
     'oscar.config.Shop',
@@ -316,6 +318,8 @@ HAYSTACK_CONNECTIONS = {
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+# Déclaration explicite du modèle Product utilisé
+OSCAR_PRODUCT_MODEL = 'catalogue.Product'
 OSCAR_INITIAL_ORDER_STATUS = "Pending"
 OSCAR_INITIAL_LINE_STATUS = "Pending"
 OSCAR_ORDER_STATUS_PIPELINE = {
@@ -351,3 +355,25 @@ STRIPE_PAYMENT_CANCEL_URL = "{0}{1}".format(
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 OSCAR_ALLOW_ANON_CHECKOUT = True
+
+# -----------------------------------------------------------------------------
+# Django CACHES configuration
+#
+# Ici, nous utilisons le backend LocMemCache :
+# - Stockage du cache en mémoire locale du processus Django.
+# - Rapide et simple à mettre en œuvre en environnement de développement.
+# - Ne nécessite aucune installation de serveur de cache externe.
+# - Attention : le cache n'est pas partagé entre différents processus ou serveurs.
+#   => Ne convient pas pour un environnement de production multi-processus / multi-serveur.
+#   => Préférer Redis ou Memcached en production.
+#
+# Utilisé ici notamment pour :
+# - Cacher la génération du sitemap (optimisation des performances SEO).
+# - Réduire les requêtes répétitives vers la base de données.
+# -----------------------------------------------------------------------------
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}

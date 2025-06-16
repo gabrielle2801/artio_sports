@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /basket/
+Disallow: /account/
+Disallow: /password-reset/
+Disallow: /search/
+Allow: /
+
+Sitemap: https://artio-sports.com/sitemap.xml
