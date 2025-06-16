@@ -52,4 +52,4 @@ try:
 except ImportError:
     pass
 
-GA_TRACKING_ID = env("GA_TRACKING_ID", "")
+GA_TRACKING_ID = env("GA_TRACKING_ID", default="")
