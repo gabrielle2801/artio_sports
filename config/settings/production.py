@@ -10,6 +10,8 @@ SECRET_KEY = env("SECRET_KEY")
 SITE_ID = 2
 # Security configuration
 
+# Google Analytics Tracking ID
+GA_TRACKING_ID = env("GA_TRACKING_ID", default="")
 # Ensure that the session cookie is only sent by browsers under an HTTPS connection.
 # https://docs.djangoproject.com/en/stable/ref/settings/#session-cookie-secure
 SESSION_COOKIE_SECURE = True
@@ -51,5 +53,3 @@ try:
     from .local import *
 except ImportError:
     pass
-
-GA_TRACKING_ID = env("GA_TRACKING_ID", default="")

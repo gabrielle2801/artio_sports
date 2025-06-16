@@ -25,6 +25,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
+# Google Analytics Tracking ID
+GA_TRACKING_ID = env("GA_TRACKING_ID", default="")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -145,6 +147,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+
+                "config.context_processors.google_analytics",
               
                 # Add this to register the _settings_ context processor:
                 "wagtail.contrib.settings.context_processors.settings",
