@@ -25,8 +25,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 env = environ.Env()
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
-# Google Analytics Tracking ID
-GA_TRACKING_ID = env("GA_TRACKING_ID", default="")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
