@@ -12,13 +12,14 @@
         {% include "oscar/partials/form_fields.html" with form=basket_form %}
         <button type="submit" class="btn btn-lg btn-primary w-100" value="{% trans "Add to basket" %}" data-loading-text="{% trans 'Adding...' %}">{% trans "Add to basket" %}</button>
      <script>
-            pintrk('track', 'addtocart', {
-            event_id: 'eventId0001',
-            value: 100,
-            order_quantity: 1,
-            currency: 'EUR'
-            });
-        </script>
+    function trackAddToCart() {
+        pintrk('track', 'addtocart', {
+            line_items: [{
+                product_id: '{{ product.id }}'
+            }]
+        });
+    }
+</script>
     </form>
     {% iffeature "wishlists" %}
         {% include "oscar/catalogue/partials/add_to_wishlist.html" %}
