@@ -23,6 +23,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("robots.txt", robots_txt),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('boutique/', include(apps.get_app_config('oscar').urls[0])),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
@@ -44,12 +45,7 @@ urlpatterns = urlpatterns + [
     path("", include('artio.standardpages.urls')),
     path("", include('artio.products.urls')),
     path("", include(wagtail_urls)),
-    path(
-        'sitemap.xml',
-        cache_page(60 * 60 * 12)(sitemap),  # ici : 12 heures de cache
-        {'sitemaps': sitemaps},
-        name='django.contrib.sitemaps.views.sitemap'
-    ),
+    
     
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:

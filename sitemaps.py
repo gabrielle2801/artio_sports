@@ -1,10 +1,8 @@
 from django.contrib.sitemaps import Sitemap
 from oscar.apps.catalogue.models import Product, Category
 from wagtail.models import Page
-from django.contrib.sites.models import Site
-from urllib.parse import urljoin
 
-# Sitemap pour les produits
+
 class ProductSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.7
@@ -14,48 +12,32 @@ class ProductSitemap(Sitemap):
 
     def lastmod(self, obj):
         return obj.date_updated
-      
+
     def location(self, obj):
-        url = obj.get_absolute_url()
-        # Vérifie si URL est absolue (commence par http)
-        if url.startswith('http'):
-            return url
-        # Sinon, ajoute domaine complet
-        current_site = Site.objects.get_current()
-        return urljoin(f"https://{current_site.domain}", url)
+        # On retourne seulement le chemin relatif, pas l'URL complète
+        return obj.get_absolute_url()
 
 
-# Sitemap pour les catégories
 class CategorySitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
 
     def items(self):
         return Category.objects.all()
-    
+
     def location(self, obj):
-        url = obj.get_absolute_url()
-        if url.startswith('http'):
-            return url
-        current_site = Site.objects.get_current()
-        return urljoin(f"https://{current_site.domain}", url)
+        # Retourne seulement le chemin relatif, sans domaine ni protocole
+        return obj.get_absolute_url()
 
 
-# Sitemap pour les pages Wagtail
 class PageSitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.5
 
     def items(self):
         return Page.objects.live().public()
-    
+
     def location(self, obj):
-        # Essaye d'utiliser full_url si disponible
-        if hasattr(obj, 'full_url') and obj.full_url:
-            return obj.full_url
-        # Sinon, construit proprement l'URL absolue
-        current_site = Site.objects.get_current()
-        url = obj.url
-        if not url.startswith('/'):
-            url = '/' + url
-        return urljoin(f"https://{current_site.domain}", url)
+        # obj.url_path est un chemin relatif commençant par '/'
+        return obj.url_path
+
