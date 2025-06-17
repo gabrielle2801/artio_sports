@@ -5,6 +5,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from django.apps import apps
+from .views import robots_txt
 from artio.search import views as search_views
 from django.contrib.sitemaps.views import sitemap
 from django.views.decorators.cache import cache_page
@@ -21,6 +22,7 @@ urlpatterns = [
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+    path("robots.txt", robots_txt),
     path('boutique/', include(apps.get_app_config('oscar').urls[0])),
     path("__reload__/", include("django_browser_reload.urls")),
 ]

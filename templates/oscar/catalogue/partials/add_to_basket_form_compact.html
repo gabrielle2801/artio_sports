@@ -12,22 +12,24 @@
         {{ basket_form|crispy }}
         <button class="submit" data-loading-text="{% trans 'Adding...' %}" id="submit-basket"><i class="fa-solid fa-bag-shopping"></i></button>
         <script>
+        function trackAddToCart() {
             pintrk('track', 'addtocart', {
-            event_id: 'eventId0001',
-            value: 100,
-            order_quantity: 1,
-            currency: 'EUR'
-            });
-        </script>
+            line_items: [{
+                product_id: '{{ product.id }}'
+            }]
+        });
+    }
+</script>
     </form>
 {% else %}
     <span class="btn btn-secondary btn-block disabled">{% trans "Add to basket" %}</span>
-    <script>
+     <script>
+        function trackAddToCart() {
             pintrk('track', 'addtocart', {
-            event_id: 'eventId0001',
-            value: 100,
-            order_quantity: 1,
-            currency: 'EUR'
-            });
-        </script>
+            line_items: [{
+                product_id: '{{ product.id }}'
+            }]
+        });
+    }
+</script>
 {% endif %}
