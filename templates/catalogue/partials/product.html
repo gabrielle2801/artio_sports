@@ -1,0 +1,22 @@
+<article itemscope itemtype="https://schema.org/Product" class="product-tile card shadow-sm mb-4">
+  <a href="{{ product.get_absolute_url }}" itemprop="url" class="card-img-top">
+    <img src="{{ product.primary_image.original.url }}" alt="{{ product.get_title }}" itemprop="image" class="img-fluid">
+  </a>
+
+  <div class="card-body text-center">
+    <h3 class="product-title h5" itemprop="name">
+      <a href="{{ product.get_absolute_url }}" class="link" itemprop="url">
+        {{ product.get_title }}
+      </a>
+    </h3>
+
+    {% purchase_info_for_product request product as session %}
+    {% if session.price.exists %}
+    <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <meta itemprop="priceCurrency" content="EUR">
+      <span itemprop="price">{{ session.price.incl_tax }}</span>
+      <link itemprop="availability" href="{% if session.availability.is_available_to_buy %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}">
+    </p>
+    {% endif %}
+  </div>
+</article>

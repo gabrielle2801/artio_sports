@@ -10,17 +10,31 @@
     <form id="add_to_basket_form" action="{% url 'basket:add' pk=product.pk  %}" method="post"  class="add-to-basket mb-0">
         {% csrf_token %}
         {% include "oscar/partials/form_fields.html" with form=basket_form %}
-        <button type="submit" class="btn btn-lg btn-primary w-100" value="{% trans "Add to basket" %}" data-loading-text="{% trans 'Adding...' %}">{% trans "Add to basket" %}</button>
-     <script>
-    function trackAddToCart() {
-        pintrk('track', 'addtocart', {
-            line_items: [{
-                product_id: '{{ product.id }}'
-            }]
-        });
-    }
-</script>
+        <button type="submit" id="add-to-cart-btn" class="btn btn-lg btn-primary w-100" value="{% trans "Add to basket" %}" data-loading-text="{% trans 'Adding...' %}">{% trans "Add to basket" %}</button>
     </form>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('add_to_basket_form');
+            var btn = document.getElementById('add-to-cart-btn');
+            if (btn && form) {
+                btn.addEventListener('click', function (event) {
+                    event.preventDefault();  // empêche le submit immédiat
+
+                    // Envoie l'événement à Pinterest
+                    pintrk('track', 'AddToCart', {
+                        product_id: '{{ product.id }}'
+                    });
+
+                    // Laisse le temps au tracking puis envoie le formulaire
+                    setTimeout(function () {
+                        form.submit();
+                    }, 200); // 300 ms = suffisant pour le tracking
+                });
+            }
+        });
+    </script>
+
     {% iffeature "wishlists" %}
         {% include "oscar/catalogue/partials/add_to_wishlist.html" %}
     {% endiffeature %}

@@ -7,29 +7,35 @@
 
 {% if session.availability.is_available_to_buy and session.price.exists %}
     {% basket_form request product 'single' as basket_form %}
-    <form action="{% url 'basket:add' pk=product.pk %}" method="post">
+    <form id="add_to_basket_form_{{ product.id }}" action="{% url 'basket:add' pk=product.pk %}" method="post">
         {% csrf_token %}
         {{ basket_form|crispy }}
-        <button class="submit" data-loading-text="{% trans 'Adding...' %}" id="submit-basket"><i class="fa-solid fa-bag-shopping"></i></button>
-        <script>
-        function trackAddToCart() {
-            pintrk('track', 'addtocart', {
-            line_items: [{
-                product_id: '{{ product.id }}'
-            }]
-        });
-    }
-</script>
+        <button class="submit" data-loading-text="{% trans 'Adding...' %}" id="submit-basket-{{ product.id }}">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </button>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('add_to_basket_form_{{ product.id }}');
+            const btn = document.getElementById('submit-basket-{{ product.id }}');
+            
+            if (form && btn) {
+                btn.addEventListener('click', function (event) {
+                    event.preventDefault();  // empêche le submit immédiat
+                    // Envoie l'événement à Pinterest
+                    pintrk('track', 'AddToCart', {
+                        product_id: '{{ product.id }}'
+                    });
+
+                    // Laisse le temps au tracking puis soumet le formulaire
+                    setTimeout(function () {
+                        form.submit();
+                    }, 200); // 300 ms suffit largement
+                });
+            }
+        });
+    </script>
 {% else %}
     <span class="btn btn-secondary btn-block disabled">{% trans "Add to basket" %}</span>
-     <script>
-        function trackAddToCart() {
-            pintrk('track', 'addtocart', {
-            line_items: [{
-                product_id: '{{ product.id }}'
-            }]
-        });
-    }
-</script>
 {% endif %}

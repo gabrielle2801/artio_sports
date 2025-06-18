@@ -8,6 +8,8 @@
 {% load display_tags %}
 {% load i18n %}
 {% load purchase_info_tags %}
+{% load schema_tags %}
+
 
 {% block title %}
     {{ product.get_meta_title }} | {{ block.super }}
@@ -16,6 +18,12 @@
 {% block description %}
     {{ product.get_meta_description }}
 {% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    {% render_product_schema product %}
+{% endblock %}
+
 
 {% block breadcrumbs %}
     <nav aria-label="breadcrumb">
@@ -142,4 +150,12 @@
 
 {% block extrascripts %}
     {{ block.super }}
+
+    {% if product %}
+    <script>
+    pintrk('track', 'PageVisit', {
+      product_id: '{{ product.id }}'
+    });
+    </script>
+    {% endif %}
 {% endblock %}

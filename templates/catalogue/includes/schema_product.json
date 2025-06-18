@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.get_title|escapejs }}",
+  "image": [
+    {% if product.primary_image %}
+      "{{ product.primary_image.original.url }}"
+    {% else %}
+      "{{ request.build_absolute_uri|cut:'/' }}/static/images/default-product.jpg"
+    {% endif %}
+  ],
+  "description": "{{ product.description|default_if_none:''|striptags|truncatechars:250|escapejs }}",
+  "sku": "{{ product.upc|default:product.id }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Artio Sports"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ request.build_absolute_uri }}",
+    "priceCurrency": "EUR",
+    "price": "{{ product.stockrecords.first.price_excl_tax|default:'0.00'|floatformat:2 }}",
+    "availability": "{% if product.stockrecords.first.num_in_stock > 0 %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>

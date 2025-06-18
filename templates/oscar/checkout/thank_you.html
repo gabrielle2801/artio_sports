@@ -134,34 +134,7 @@
             <p>{% trans "You can track the status of your order" %}
                 <a class="btn btn-primary" href="{% url 'customer:anon-order' order_number=order.number hash=order.verification_hash %}" class="link">{% trans "View order status" %}</a>.</p>
         {% endif %}
-   <script>
-    const line_items = [
-        {% for line in order.lines.all %}
-            {
-                product_id: "{{ line.product.id }}",
-                {% with line.product.categories.first as category %}
-                    {% if category %}
-                        product_category: "{{ category.name|escapejs }}"
-                    {% else %}
-                        product_category: "inconnu"
-                    {% endif %}
-                {% endwith %}
-            }{% if not forloop.last %}, {% endif %}
-        {% endfor %}
-    ];
-
-    console.log("✅ line_items :", line_items);
-
-    pintrk('track', 'checkout', {
-        order_id: "{{ order.number }}",
-        value: parseFloat("{{ order.total_incl_tax|floatformat:2 }}"),
-        currency: 'EUR',
-        line_items: line_items
-    });
-</script>
-
     {% endblock %}
-
 
     {% block order_actions %}
         <div class="form-group">
@@ -176,9 +149,31 @@
         </div>
     {% endblock order_actions %}
 {% endblock content %}
-{% block extra_scripts %}
+{% block extrascripts %}
+{{ block.super }}
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        {% for line in order.lines.all %}
+        pintrk('track', 'Checkout', {
+            product_id: '{{ line.product.pk }}',
+            value: parseFloat('{{ line.line_price_incl_tax|stringformat:"f" }}'.replace(',', '.')),
+            currency: '{{ order.currency }}',
+            order_quantity: {{ line.quantity }}
+        });
+        {% endfor %}
+    });
+
+
+
+    </script>
 
 {% endblock %}
+
+
+
+
+
 
 {% block tracking %}
     {% if send_analytics_event %}
