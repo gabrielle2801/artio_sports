@@ -7,15 +7,31 @@ from wagtail.documents import urls as wagtaildocs_urls
 from django.apps import apps
 from .views import robots_txt
 from artio.search import views as search_views
+from sitemaps import (
+    ProductSitemap,
+    CategorySitemap,
+    PageSitemap,
+    WagtailPageSitemap,
+)
 from django.contrib.sitemaps.views import sitemap
-from django.views.decorators.cache import cache_page
-from sitemaps import ProductSitemap, CategorySitemap, PageSitemap
+# from django.views.decorators.cache import cache_page
+from oscar.core.loading import get_model
 
+
+Product = get_model('catalogue', 'Product')
+
+product_info = {
+    'queryset': Product.objects.filter(is_public=True, structure='standalone', 
+                                       stockrecords__num_in_stock__gt=0),
+    'date_field': 'date_updated',
+}
 sitemaps = {
     'products': ProductSitemap,
     'categories': CategorySitemap,
     'pages': PageSitemap,
+    'wagtail_pages': WagtailPageSitemap(),
 }
+
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path("django-admin/", admin.site.urls),

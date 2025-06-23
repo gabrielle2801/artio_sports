@@ -12,6 +12,8 @@ SITE_ID = 2
 
 # Google Analytics Tracking ID
 GA_TRACKING_ID = env("GA_TRACKING_ID", default="")
+# Google Tag Manager ID
+GTM_ID = env("GTM_ID", default="")
 # Ensure that the session cookie is only sent by browsers under an HTTPS connection.
 # https://docs.djangoproject.com/en/stable/ref/settings/#session-cookie-secure
 SESSION_COOKIE_SECURE = True

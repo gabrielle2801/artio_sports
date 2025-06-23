@@ -1,10 +1,17 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /django-admin/
+Disallow: /documents/
+Disallow: /__reload__/
 Disallow: /checkout/
 Disallow: /basket/
 Disallow: /account/
 Disallow: /password-reset/
 Disallow: /search/
+Disallow: /static/
+# Disallow: /media/
+# Permet l'indexation des pages produit et catégories
+Allow: /boutique/catalogue/
 Allow: /
 
 Sitemap: https://artio-sports.com/sitemap.xml
