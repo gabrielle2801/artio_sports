@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load category_tags %}
+{% load custom_tags %}
 
 {% block styles %}
 <link href="{% static 'dist/css/styles.css' %}" rel="stylesheet" />
@@ -15,12 +16,11 @@
 
     {# Site logo/title, mini-basket, browse dropdown and searchbox #}
     <header>
-        <div class="masthead">
+        <div class="masthead_catalogue">
             <div class="row justify-content-between">
-                <img class="img-fluid img_header" id="img_header" src="{% static 'src/assets/img/250210_Fond_joutes.png' %}" alt="..." />
             </div>
-            <div class="special-offer-banner text-center ">
-                <p class="text-center "><b>🎉 Offre Spéciale sur toute la boutique ! Encore une semaine de plus !</b></p> 
+            <div class="special-offer-banner text-center">
+                <p class="text-center "><b>🎉 Offre Spéciale sur toute la boutique ! valable jusqu'à <strong>{% next_sunday %}</strong></b></p> 
                 <p class="text-center "><b>livraison gratuite pour 2 articles achetés ! et la casquette de votre choix offerte pour 3 articles achetés ! </b></p>
             </div>
         </div>
