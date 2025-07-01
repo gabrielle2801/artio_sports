@@ -21028,6 +21028,14 @@ h2, .h2 {
   max-width: 20rem;
   font-size: 200;
 }
+.masthead .special-offer-banner {
+  background-color: #ff4d4f;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+}
 @media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
     font-size: 4rem;

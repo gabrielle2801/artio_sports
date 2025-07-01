@@ -41,6 +41,15 @@
         max-width: 20rem;
         font-size: 200;
     }
+    .special-offer-banner {
+        background-color: #ff4d4f;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 18px;
+        position: relative;
+    }
+
     
     @include media-breakpoint-up(md) {
         h1 {
