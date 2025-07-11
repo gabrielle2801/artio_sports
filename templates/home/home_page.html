@@ -118,7 +118,7 @@
                         <div id="carousel2" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 {% for loop_cycle in self.gallery_setoise_part2.all %}
-                                {% image loop_cycle.image fill-900x500 as catalogue2 %}
+                                {% image loop_cycle.image max-900x500 as catalogue2 %}
                                 <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
                                     <img src="{{ catalogue2.url }}" class="img-fluid" alt="{{ catalogue2.alt }}">
                                 </div>
@@ -139,7 +139,7 @@
                         <div id="carousel3" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 {% for loop_cycle in self.gallery_setoise_part3.all %}
-                                {% image loop_cycle.image fill-900x500 as catalogue3 %}
+                                {% image loop_cycle.image max-900x500 as catalogue3 %}
                                 <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
                                     <img src="{{ catalogue3.url }}" class="img-fluid" alt="{{ catalogue3.alt }}">
                                 </div>
@@ -183,7 +183,7 @@
                 <div id="carouselhandball" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         {% for loop_cycle in self.gallery_handball.all %}
-                            {% image loop_cycle.image fill-900x500 as img %}
+                            {% image loop_cycle.image max-900x500 as img %}
                             <div class="carousel-item{% if forloop.first %} active{% endif %}">
                                 <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
                                 <div class="carousel-caption d-md-block">
@@ -215,7 +215,7 @@
                 <div id="carouselrugby" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         {% for loop_cycle in self.gallery_rugby.all %}
-                            {% image loop_cycle.image fill-900x500 as img %}
+                            {% image loop_cycle.image max-900x500 as img %}
                             <div class="carousel-item{% if forloop.first %} active{% endif %}">
                                 <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
                                 <div class="carousel-caption d-md-block">
@@ -253,14 +253,42 @@
     </div>
      <!-- Project One Row-->
      <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/250119_football.png' %}" alt="..." /></div>
-        <div class="col-xl-4 col-lg-5 order-lg-first ">
+<div class="col-lg-8">
+                <div id="carouselfutsal" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_futsal.all %}
+                            {% image loop_cycle.image max-900x500 as img %}
+                            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                                <div class="carousel-caption  d-md-block">
+                                    {% if loop_cycle.pdf_file %}
+                                        <a href="{{ loop_cycle.pdf_file.url }}" target="_blank" class="btn btn-primary">
+                                            Voir le PDF
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselfutsal" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselfutsal" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>         
+            <div class="col-xl-4 col-lg-5 order-lg-first ">
             <div class="featured-text-right text-center text-lg-left">
-                <h4>FOOTBALLL</h4>
+                <h4>FUTSAL</h4>
                 <p class="text-black-50 mb-0">
-                    Vivez votre passion du football avec Artio !
-                    Le football, c’est bien plus qu’un sport. C’est une passion, une énergie, une équipe. Chez Artio, nous vous offrons tout ce dont vous avez besoin pour vivre votre amour du jeu à fond. 
-                    Que vous soyez joueur, entraîneur, notre large sélection de vêtements vous accompagne à chaque étape de votre aventure footballistique.
+                    Chez Artio, nous avons une mission : créer des vêtements techniques et stylés qui répondent aux exigences du futsal moderne.
+                    Que ce soit pour les clubs, les passionnés ou les compétiteurs, nous concevons des tenues de match, maillots, shorts, survêtements et équipements d'entraînement adaptés à l’intensité du jeu en salle.  
+                    Confection soignée, tissus respirants, coupes ergonomiques : chaque pièce est pensée pour offrir liberté de mouvement, confort et durabilité.
+                    Fier de notre savoir-faire, Artio mise sur une production française et responsable, au service de la performance et de l’élégance sur le terrain.         
                 </p>
             </div>
         </div>
@@ -271,7 +299,7 @@
                 <div id="carouselbasket" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         {% for loop_cycle in self.gallery_basket.all %}
-                            {% image loop_cycle.image fill-900x500 as img %}
+                            {% image loop_cycle.image max-900x500 as img %}
                             <div class="carousel-item{% if forloop.first %} active{% endif %}">
                                 <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
                                 <div class="carousel-caption  d-md-block">
@@ -323,10 +351,37 @@
     </div>
      <!-- Featured Project Row-->
      <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_running2.png' %}" alt="..." /></div>
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-lg-8">
+                <div id="carouselrunning" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_running.all %}
+                            {% image loop_cycle.image max-900x500 as img %}
+                            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                                <div class="carousel-caption  d-md-block">
+                                    {% if loop_cycle.pdf_file %}
+                                        <a href="{{ loop_cycle.pdf_file.url }}" target="_blank" class="btn btn-primary">
+                                            Voir le PDF
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselrunning" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselrunning" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>       
+             <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
-                <h4>RUNNING-ATHLETISME</h4>
+                <h4>ATHLETICS-RUNNING</h4>
                 <p class="text-black-50 mb-0">
                     Que vous soyez un coureur débutant ou un marathonien confirmé nous proposons une gamme complète d'équipements de running adaptés à tous les niveaux. 
                     Avec ARTIO chaque foulée devient plus légère, chaque distance plus accessible.
@@ -342,7 +397,7 @@
                 <div id="carouseltennis" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         {% for loop_cycle in self.gallery_tennis.all %}
-                            {% image loop_cycle.image fill-900x500 as img %}
+                            {% image loop_cycle.image max-900x500 as img %}
                             <div class="carousel-item{% if forloop.first %} active{% endif %}">
                                 <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
                                 <div class="carousel-caption  d-md-block">

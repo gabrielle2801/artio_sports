@@ -135,6 +135,32 @@ class HomePageTennis(Orderable):
     ]
 
 
+class HomePageFutsal(Orderable):
+    page = ParentalKey("HomePage", related_name="gallery_futsal")
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    pdf_file = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('pdf_file'),
+        FieldPanel('caption'),
+    ]
+
+
 class HomePageBasket(Orderable):
     page = ParentalKey("HomePage", related_name="gallery_basket")
 
@@ -163,6 +189,32 @@ class HomePageBasket(Orderable):
 
 class HomePageHandball(Orderable):
     page = ParentalKey("HomePage", related_name="gallery_handball")
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    pdf_file = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('pdf_file'),
+        FieldPanel('caption'),
+    ]
+
+
+class HomePageRunning(Orderable):
+    page = ParentalKey("HomePage", related_name="gallery_running")
 
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -280,6 +332,16 @@ class HomePage(Page):
         MultipleChooserPanel(
             'gallery_rugby', 
             label="Gallery Rugby", 
+            chooser_field_name="image"
+        ),
+        MultipleChooserPanel(
+            'gallery_futsal', 
+            label="Gallery Futsal", 
+            chooser_field_name="image"
+        ),
+        MultipleChooserPanel(
+            'gallery_running', 
+            label="Gallery Running", 
             chooser_field_name="image"
         ),
     ]
