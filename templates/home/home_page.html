@@ -72,7 +72,6 @@
                             <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
                         </div>
                     {% endfor %}
-                        
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
@@ -168,10 +167,79 @@
 <!-- Projects-->
 <section class="projects-section bg-light" id="projects">
 <div class="container px-4 px-lg-5">
+     <!-- Project One Row-->
+     <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+        <div class="col-xl-4 col-lg-5 order-lg-first ">
+            <div class="featured-text-right text-center text-lg-left">
+                <h4 style="font-weight: 500;">HANDBALL</h4>
+                <p class="text-black-50 mb-0">
+                    Équipez-vous comme un champion avec Artio ! 
+                    Chez Artio, chaque produit est pensé par des passionnés de handball, pour tous ceux qui vivent ce sport avec intensité.
+                    Que vous soyez débutant motivé, joueur confirmé ou entraîneur exigeant, vous trouverez ici l’équipement pour repousser vos limites et faire la différence sur le terrain.
+                </p>
+            </div>
+        </div>
+         <div class="col-lg-8">
+                <div id="carouselhandball" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_handball.all %}
+                            {% image loop_cycle.image fill-900x500 as img %}
+                            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                                <div class="carousel-caption d-none d-md-block">
+                                    {% if loop_cycle.pdf_file %}
+                                        <a href="{{ loop_cycle.pdf_file.url }}" target="_blank" class="btn btn-primary">
+                                            Voir le PDF
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselhandball" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselhandball" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div> 
+    </div>
+     
     <!-- Featured Project Row-->
     <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_rugby.png' %}" alt="..." /></div>
-        <div class="col-xl-4 col-lg-5">
+   <div class="col-lg-8">
+                <div id="carouselrugby" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_rugby.all %}
+                            {% image loop_cycle.image fill-900x500 as img %}
+                            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                                <div class="carousel-caption d-none d-md-block">
+                                    {% if loop_cycle.pdf_file %}
+                                        <a href="{{ loop_cycle.pdf_file.url }}" target="_blank" class="btn btn-primary">
+                                            Voir le PDF
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselrugby" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselrugby" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>       
+             <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
                 <h4>RUGBY</h4>
                 <p class="text-black-50 mb-0">
@@ -179,6 +247,7 @@
                     Vivez le rugby avec l'énergie et la performance qui vous ressemblent ! 
                     Chez Artio, nous proposons une gamme de produits spécialement conçus pour les passionnés de rugby, pour vous accompagner dans chaque étape de votre aventure sportive.
                 </p>
+                  
             </div>
         </div>
     </div>
@@ -197,17 +266,44 @@
         </div>
     </div>
      <!-- Featured Project Row-->
-     <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_basket2.png' %}" alt="..." /></div>
-        <div class="col-xl-4 col-lg-5">
+       <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+   <div class="col-lg-8">
+                <div id="carouselbasket" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_basket.all %}
+                            {% image loop_cycle.image fill-900x500 as img %}
+                            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                                <div class="carousel-caption d-none d-md-block">
+                                    {% if loop_cycle.pdf_file %}
+                                        <a href="{{ loop_cycle.pdf_file.url }}" target="_blank" class="btn btn-primary">
+                                            Voir le PDF
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselbasket" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselbasket" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>       
+             <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
-                <h4>BASKETBALL</h4>
+                <h4>BASKET</h4>
                 <p class="text-black-50 mb-0">
-                    Vivez le basketball comme jamais auparavant !
-                    Que vous soyez joueur débutant ou athlète confirmé, plongez dans l'univers passionnant du basketball avec nos produits de haute qualité. 
-                    Alliez confort et style avec nos tenues respirantes et fonctionnelles, parfaitement adaptées aux conditions exigeantes du jeu. 
-                    
-                </p>
+                Vivez le basketball comme jamais auparavant ! 
+                Que vous soyez joueur débutant ou athlète confirmé, plongez dans l'univers passionnant du basketball avec nos produits de haute qualité. 
+                Alliez confort et style avec nos tenues respirantes et fonctionnelles, parfaitement adaptées aux conditions exigeantes du jeu.               
+             </p>
+                  
             </div>
         </div>
     </div>
@@ -242,8 +338,35 @@
     </div>
     <!-- Project One Row-->
     <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/250115_tennis.png' %}" alt="..." /></div>
-        <div class="col-xl-4 col-lg-5 order-lg-first ">
+<div class="col-lg-8">
+                <div id="carouseltennis" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for loop_cycle in self.gallery_tennis.all %}
+                            {% image loop_cycle.image fill-900x500 as img %}
+                            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                                <img src="{{ img.url }}" class="img-fluid" alt="{{ img.alt }}">
+                                <div class="carousel-caption d-none d-md-block">
+                                    {% if loop_cycle.pdf_file %}
+                                        <a href="{{ loop_cycle.pdf_file.url }}" target="_blank" class="btn btn-primary">
+                                            Voir le PDF
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouseltennis" role="button" data-slide="prev">
+                        <i class="fa-solid fa-chevron-left" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouseltennis" role="button" data-slide="next">
+                        <i class="fa-solid fa-chevron-right" style="color: black; font-size: xx-large;"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>         
+            <div class="col-xl-4 col-lg-5 order-lg-first ">
             <div class="featured-text-right text-center text-lg-left">
                 <h4>TENNIS-PADEL</h4>
                 <p class="text-black-50 mb-0">
@@ -254,22 +377,8 @@
             </div>
         </div>
     </div>
-    <!-- Featured Project Row-->
-    <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src= "{% static 'src/assets/img/241125_vtt-motocross2.png' %}" alt="..." /></div>
-        <div class="col-xl-4 col-lg-5">
-            <div class="featured-text text-center text-lg-left">
-                <h4>VTT-MOTOCROSS</h4>
-                <p class="text-black-50 mb-0">
-                    Découvrez notre gamme ARTIO d’équipements conçus pour allier style, confort et sécurité. Que vous soyez un amateur de sensations fortes ou un compétiteur aguerri.
-                    Pour relever chaque défi, sur deux roues 
-                    la performance commence avec le bon équipement sur les circuits avec des styles uniques.
-
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+  
+       
 </section>
 <!-- Signup-->
 <section class="signup-section" id="signup">

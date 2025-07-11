@@ -284,6 +284,7 @@ DEFAULT_FROM_EMAIL = 'contact@artio-sports.com'
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "https://artio-sports.com/"
+BREVO_API_KEY = os.getenv('BREVO_API_KEY')
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk

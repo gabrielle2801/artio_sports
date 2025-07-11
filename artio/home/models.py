@@ -5,6 +5,7 @@ from wagtail.models import Page, Orderable
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import (FieldPanel, MultiFieldPanel,
                                   MultipleChooserPanel)
+from wagtail.documents.models import Document
 from wagtailvideos.edit_handlers import VideoChooserPanel
 
 
@@ -78,6 +79,110 @@ class HomePageSetoise3(Orderable):
 
     panels = [
         FieldPanel('image'),
+        FieldPanel('caption'),
+    ]
+
+
+class HomePageRugby(Orderable):
+    page = ParentalKey("HomePage", related_name="gallery_rugby")
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    pdf_file = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('pdf_file'),
+        FieldPanel('caption'),
+    ]
+
+
+class HomePageTennis(Orderable):
+    page = ParentalKey("HomePage", related_name="gallery_tennis")
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    pdf_file = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('pdf_file'),
+        FieldPanel('caption'),
+    ]
+
+
+class HomePageBasket(Orderable):
+    page = ParentalKey("HomePage", related_name="gallery_basket")
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    pdf_file = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('pdf_file'),
+        FieldPanel('caption'),
+    ]
+
+
+class HomePageHandball(Orderable):
+    page = ParentalKey("HomePage", related_name="gallery_handball")
+
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=False,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+    pdf_file = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('image'),
+        FieldPanel('pdf_file'),
         FieldPanel('caption'),
     ]
 
@@ -156,7 +261,27 @@ class HomePage(Page):
             'gallery_setoise_part3', 
             label="Gallery images setoise 3", 
             chooser_field_name="image"
-        )
+        ),
+        MultipleChooserPanel(
+            'gallery_tennis', 
+            label="Gallery Tennis", 
+            chooser_field_name="image"
+        ),
+        MultipleChooserPanel(
+            'gallery_handball', 
+            label="Gallery Handball", 
+            chooser_field_name="image"
+        ),
+        MultipleChooserPanel(
+            'gallery_basket', 
+            label="Gallery Basket", 
+            chooser_field_name="image"
+        ),
+        MultipleChooserPanel(
+            'gallery_rugby', 
+            label="Gallery Rugby", 
+            chooser_field_name="image"
+        ),
     ]
 
 
